@@ -1,0 +1,19 @@
+{
+ "name": "News Haras · Acompanhamento das obras",
+ "short_name": "News Haras",
+ "description": "Revista eletrônica do Chacreamento Haras Rio São José para os clientes.",
+ "start_url": "./",
+ "scope": "./",
+ "display": "standalone",
+ "background_color": "#183827",
+ "theme_color": "#183827",
+ "lang": "pt-BR",
+ "icons": [
+  {
+   "src": "assets/icon-512.png",
+   "sizes": "512x512",
+   "type": "image/png",
+   "purpose": "any"
+  }
+ ]
+}

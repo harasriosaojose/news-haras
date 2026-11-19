@@ -16,6 +16,9 @@
   "fonte": "Percentuais e fotos: relatórios do engenheiro responsável pela fiscalização das obras. Data e local impressos em cada foto.",
   "whatsapp": "5511991468192",
   "whatsapp_exibir": "(11) 99146-8192",
+  "whatsapp_escritorio": "",
+  "endereco": "Rua Cardeal Silva, nº 58, Centro, Poções, Bahia",
+  "mensal": "O News Haras é atualizado todos os meses. Acompanhe as obras direto por aqui.",
   "prazo_resposta": "até 2 dias úteis",
   "link_mapa": "https://harasriosaojose.github.io/haras-rio-sao-jose-mapa/",
   "link_agua": "https://tinyurl.com/redeaguahrsj",
@@ -43,6 +46,10 @@
    {
     "t": "Quadra de areia: as obras começaram",
     "ir": "#obra=quadra"
+   },
+   {
+    "t": "Documentação legal: 34 glebas registradas, CCIR e ITR em dia",
+    "ir": "#legal"
    },
    {
     "t": "Mais de 200 fotos do engenheiro e 17 vídeos",
@@ -1199,5 +1206,31 @@
     "dur": "28 s"
    }
   ]
+ },
+ "legal": {
+  "titulo": "Documentação legal do empreendimento",
+  "sub": "Registro de imóveis, CCIR, ITR e escrituras: como está cada um.",
+  "cartoes": [
+   {
+    "t": "Registro no Cartório de Imóveis de Poções",
+    "d": "A matrícula principal do empreendimento (nº 14.294) foi desmembrada em 34 glebas, cada uma com a sua matrícula, de nº 15.195 a 15.228. Todos os 654 lotes estão dentro dessas matrículas."
+   },
+   {
+    "t": "CCIR e ITR regularizados",
+    "d": "Em novembro de 2026, o cadastro das 34 glebas no INCRA (CCIR, exercício de 2026) e a declaração do ITR na Receita Federal (exercício de 2026) foram regularizados em nome da empresa."
+   },
+   {
+    "t": "Kit da documentação no escritório",
+    "d": "A certidão de inteiro teor da matrícula principal e os CCIR e ITR de todas as glebas ficam à disposição para consulta no escritório: Rua Cardeal Silva, nº 58, Centro, Poções."
+   },
+   {
+    "t": "Próxima etapa: as escrituras",
+    "d": "A formalização das escrituras terá início a partir da entrega do empreendimento, prevista para o segundo semestre de 2027, para os clientes com o financeiro quitado. Conforme o contrato, as despesas com a escritura (impostos, taxas e emolumentos) são por conta de cada cliente."
+   }
+  ],
+  "nota_lote": "O número do seu lote continua o mesmo. O que mudou foi a gleba: a planta de vendas tinha 57 glebas, e o registro oficial tem 34 glebas maiores. Por isso, a gleba do seu contrato pode ser diferente da gleba registrada.",
+  "certidao": "Cada cliente pode pedir ao Cartório de Registro de Imóveis de Poções a certidão de inteiro teor da matrícula da gleba onde está o seu terreno.",
+  "gleba_01": "Área da entrada, com o clube e o lago. Não tem lotes.",
+  "gleba_34": "Reserva legal. Não tem lotes."
  }
 }

@@ -47,7 +47,7 @@
       '<div class="geral"><div class="anel"><svg viewBox="0 0 112 112"><circle class="fundo" cx="56" cy="56" r="' + r + '"/><circle class="frente" cx="56" cy="56" r="' + r +
       '" stroke-dasharray="' + comp.toFixed(1) + '" stroke-dashoffset="' + comp.toFixed(1) + '" data-fim="' + (comp * (1 - a.geral_pct / 100)).toFixed(1) + '"/></svg><b>' + pct(a.geral_pct) + "</b></div>" +
       '<div><div class="rot">' + esc(a.rotulo_geral) + '</div><div class="txt">Posição em ' + esc(a.referencia) + ". Em " + esc(a.geral_anterior_ref) + ", era <b>" + pct(a.geral_anterior_pct) + "</b>.</div>" +
-      '<div class="dat">Atualizado em ' + esc(a.atualizado_em) + "</div></div></div>" +
+      '<div class="dat">Atualizado em ' + esc(a.atualizado_em) + " · atualização mensal</div></div></div>" +
       '<div class="contagem"><div><b>' + n.concluida + "</b><span>concluídas</span></div><div><b>" + n.execucao + "</b><span>em andamento</span></div><div><b>" + n.iniciar + "</b><span>a iniciar</span></div></div>" +
       '<div class="nesta"><p>Nesta edição</p>' + a.nesta_edicao.map(function (x, i) { return '<a href="' + x.ir + '"><b>' + (i + 1) + "</b><span>" + esc(x.t) + "</span></a>"; }).join("") + "</div>" +
       "</div></header>";
@@ -164,6 +164,72 @@
       }).join("") + "</div></div></section>";
   }
 
+  /* ---------- documentação legal ---------- */
+  var L = null, NS = "http://www.w3.org/2000/svg";
+  function legal() {
+    var g = D.legal;
+    return '<section class="bloco miolo" id="legal"><div class="cab"><div class="fio-ouro"></div><h2>' + esc(g.titulo) + "</h2><p>" + esc(g.sub) + "</p></div>" +
+      '<div class="cartoes-legais">' + g.cartoes.map(function (c, i) { return '<article class="cl"><b class="num">' + (i + 1) + "</b><h3>" + esc(c.t) + "</h3><p>" + esc(c.d) + "</p></article>"; }).join("") + "</div>" +
+      '<div class="acha"><h3>Encontre a matrícula da sua unidade</h3><p>Digite o número do seu lote. Você também pode tocar em uma gleba no mapa.</p>' +
+      '<form id="busca-lote" class="busca"><input id="lote-n" inputmode="numeric" pattern="[0-9]*" maxlength="3" placeholder="Nº do lote" aria-label="Número do lote"><button class="botao verde" type="submit">Buscar</button></form>' +
+      '<div id="res-lote" class="res-lote" aria-live="polite"></div>' +
+      '<div class="mapa-caixa"><div class="mapa-rolo" id="mapa-rolo"><svg id="mapa-legal" role="img" aria-label="Mapa das 34 glebas registradas"></svg></div><p class="dica">Mapa das 34 glebas registradas. Arraste para os lados.</p></div>' +
+      '<p class="nota">' + esc(g.nota_lote) + " " + esc(g.certidao) + "</p></div>" +
+      '<details class="quadro"><summary>Ver o quadro das 34 glebas, com matrícula, área e CCIR</summary><div class="tab-rolo"><table><thead><tr><th>Gleba</th><th>Matrícula</th><th>Área (ha)</th><th>CCIR nº</th><th>Lotes</th></tr></thead><tbody id="tab-glebas"></tbody></table></div></details>' +
+      "</section>";
+  }
+  function faixa(ls) {
+    if (!ls.length) return "sem lotes";
+    var r = [], i = 0;
+    while (i < ls.length) { var j = i; while (j + 1 < ls.length && +ls[j + 1] === +ls[j] + 1) j++; r.push(i === j ? ls[i] : ls[i] + " a " + ls[j]); i = j + 1; }
+    return r.join(", ");
+  }
+  function ha(n) { return Number(n).toLocaleString("pt-BR", { minimumFractionDigits: 4, maximumFractionDigits: 4 }); }
+  function fichaGleba(g, lote) {
+    var extra = g.n === 1 ? D.legal.gleba_01 : g.n === 34 ? D.legal.gleba_34 : g.lotes.length + " lotes: " + faixa(g.lotes);
+    return '<div class="ficha-g">' + (lote ? '<p class="lt">Unidade <b>' + esc(lote.id) + "</b> · " + lote.m2.toLocaleString("pt-BR") + " m²</p>" : "") +
+      '<div class="fg"><div><small>Gleba registrada</small><b>' + String(g.n).padStart(2, "0") + '</b></div><div><small>Matrícula</small><b>' + esc(g.mat) + '</b></div><div><small>Área da gleba</small><b>' + ha(g.ha) + " ha</b></div></div>" +
+      '<p class="cart">Cartório de Registro de Imóveis de Poções · CCIR nº ' + esc(g.ccir) + "</p><p class=\"ex\">" + esc(extra) + "</p></div>";
+  }
+  function marcar(g, lote) {
+    var svg = document.getElementById("mapa-legal");
+    svg.querySelectorAll(".sel").forEach(function (e) { e.classList.remove("sel"); });
+    var eg = svg.querySelector('[data-g="' + g.n + '"]'); if (eg) eg.classList.add("sel");
+    if (lote) { var el = svg.querySelector('[data-l="' + lote.id + '"]'); if (el) el.classList.add("sel"); }
+    document.getElementById("res-lote").innerHTML = fichaGleba(g, lote);
+    var rolo = document.getElementById("mapa-rolo"), c = lote ? lote.c : g.c, vb = L.viewbox;
+    rolo.scrollTo({ left: (c[0] - vb[0]) / vb[2] * svg.clientWidth - rolo.clientWidth / 2, behavior: "smooth" });
+  }
+  function montarLegal() {
+    fetch("data/legal.json?v=" + Date.now()).then(function (r) { return r.json(); }).then(function (d) {
+      L = d;
+      var svg = document.getElementById("mapa-legal"), vb = d.viewbox, h = "";
+      svg.setAttribute("viewBox", vb.join(" "));
+      d.glebas.forEach(function (g) { h += '<polygon class="gl' + (g.n === 1 ? " g01" : g.n === 34 ? " g34" : "") + '" data-g="' + g.n + '" points="' + g.p + '"/>'; });
+      d.lotes.forEach(function (l) { h += '<polygon class="lt" data-l="' + l.id + '" points="' + l.p + '"/>'; });
+      d.glebas.forEach(function (g) { h += '<text class="gn" x="' + g.c[0] + '" y="' + (g.c[1] + 12) + '">' + String(g.n).padStart(2, "0") + "</text>"; });
+      svg.innerHTML = h;
+      document.getElementById("tab-glebas").innerHTML = d.glebas.map(function (g) {
+        return "<tr><td><b>" + String(g.n).padStart(2, "0") + "</b></td><td>" + esc(g.mat) + "</td><td>" + ha(g.ha) + "</td><td>" + esc(g.ccir) + "</td><td>" + (g.n === 1 ? "Entrada, clube e lago" : g.n === 34 ? "Reserva legal" : faixa(g.lotes)) + "</td></tr>";
+      }).join("");
+      svg.addEventListener("click", function (e) {
+        var t = e.target, n = t.dataset.g, lt = t.dataset.l, lote = null;
+        if (lt) { lote = d.lotes.filter(function (x) { return x.id === lt; })[0]; n = lote.g; }
+        if (n) marcar(d.glebas.filter(function (x) { return x.n === +n; })[0], lote);
+      });
+    });
+  }
+
+  /* ---------- instalar na tela do celular ---------- */
+  var promptInstalar = null;
+  window.addEventListener("beforeinstallprompt", function (e) { e.preventDefault(); promptInstalar = e; var b = document.getElementById("bt-instalar"); if (b) b.hidden = false; });
+  function instalar() {
+    return '<section class="bloco miolo" id="atalho"><div class="instalar"><div class="cab"><h2>Leve o News Haras na tela do seu celular</h2><p>' + esc(D.app.mensal) + " Crie um atalho e abra com um toque, como um aplicativo.</p></div>" +
+      '<button class="botao ouro" id="bt-instalar" hidden>Adicionar à tela inicial</button>' +
+      '<div class="passos"><div><h3>No Android (Chrome)</h3><ol><li>Toque nos três pontinhos, no alto da tela.</li><li>Escolha "Adicionar à tela inicial".</li><li>Confirme em "Adicionar".</li></ol></div>' +
+      '<div><h3>No iPhone (Safari)</h3><ol><li>Toque no botão de compartilhar, embaixo da tela.</li><li>Escolha "Adicionar à Tela de Início".</li><li>Confirme em "Adicionar".</li></ol></div></div></div></section>';
+  }
+
   /* ---------- contato ---------- */
   function contato() {
     var a = D.app;
@@ -179,6 +245,8 @@
       '<div class="ok-envio" id="ok-envio" hidden></div>' +
       '<p class="priv">Seus dados são usados somente para responder a você (Lei nº 13.709/2018). A mensagem é vista apenas pela equipe do escritório.</p></form>' +
       '<div><div class="coord"><h3>Prefere falar direto?</h3><p>Converse com o coordenador pelo WhatsApp ' + esc(a.whatsapp_exibir) + '.</p><a class="botao zap" target="_blank" rel="noopener" href="' + zap("Olá! Estou acompanhando as obras pelo News Haras e quero falar com o coordenador.") + '">' + IC.zap + "Falar com o coordenador</a></div>" +
+      '<div class="escr"><h3>Quero falar direto com o escritório de Poções</h3><p>' + esc(a.endereco) + ".</p>" +
+      (a.whatsapp_escritorio ? '<a class="botao zap" target="_blank" rel="noopener" href="https://wa.me/' + esc(a.whatsapp_escritorio) + "?text=" + encodeURIComponent("Olá! Vi o News Haras e quero falar com o escritório de Poções.") + '">' + IC.zap + "WhatsApp do escritório</a>" : "") + "</div>" +
       '<div class="links"><a class="botao linha" target="_blank" rel="noopener" href="' + esc(a.link_mapa) + '">' + IC.mapa + "Abrir o mapa de unidades</a></div></div></div></section>";
   }
 
@@ -218,6 +286,7 @@
     else if (t.dataset.video) abrir('<video src="' + V + t.dataset.video + '.mp4" poster="' + V + t.dataset.video + '.jpg" controls playsinline autoplay muted></video>', t.dataset.leg);
   });
   tela.addEventListener("submit", function (e) {
+    if (e.target.id !== "form") return;
     e.preventDefault();
     var f = e.target, v = {}, falta = false;
     ["nome", "unidade", "telefone", "mensagem"].forEach(function (k) { v[k] = f[k].value.trim(); if (!v[k]) falta = true; });
@@ -245,12 +314,24 @@
     var obs = new IntersectionObserver(function (es) {
       es.forEach(function (x) { if (x.isIntersecting) links.forEach(function (l) { l.classList.toggle("ativo", l.dataset.s === x.target.id); }); });
     }, { rootMargin: "-45% 0px -50% 0px" });
-    ["inicio", "destaques", "obras", "videos", "contato"].forEach(function (id) { var el = document.getElementById(id); if (el) obs.observe(el); });
+    ["inicio", "destaques", "obras", "videos", "legal", "contato", "atalho"].forEach(function (id) { var el = document.getElementById(id); if (el) obs.observe(el); });
   }
 
   fetch("data/obras.json?v=" + Date.now()).then(function (r) { return r.json(); }).then(function (d) {
     D = d;
-    tela.innerHTML = capa() + destaques() + obras() + midia() + contato();
+    tela.innerHTML = capa() + destaques() + obras() + midia() + legal() + contato() + instalar();
+    montarLegal();
+    document.getElementById("busca-lote").addEventListener("submit", function (e) {
+      e.preventDefault(); e.stopPropagation();
+      var n = document.getElementById("lote-n").value.replace(/\D/g, ""), res = document.getElementById("res-lote");
+      if (!L || !n) return;
+      n = n.padStart(3, "0");
+      var lote = L.lotes.filter(function (x) { return x.id === n; })[0];
+      if (!lote) { res.innerHTML = '<p class="erro">Não encontramos o lote ' + esc(n) + ". Confira o número no seu contrato.</p>"; return; }
+      marcar(L.glebas.filter(function (x) { return x.n === lote.g; })[0], lote);
+    });
+    document.getElementById("bt-instalar").addEventListener("click", function () { if (promptInstalar) { promptInstalar.prompt(); promptInstalar = null; this.hidden = true; } });
+    if (promptInstalar) document.getElementById("bt-instalar").hidden = false;
     document.getElementById("rodape-fonte").textContent = d.app.fonte;
     document.getElementById("rodape-ressalva").textContent = d.app.ressalva;
     document.title = d.app.nome + " · " + d.app.subtitulo + " · Haras Rio São José";
