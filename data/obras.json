@@ -1,0 +1,1132 @@
+{
+ "app": {
+  "nome": "News Haras",
+  "subtitulo": "Acompanhamento das obras",
+  "edicao": "Edição nº 1 · Novembro de 2026",
+  "saudacao": "Que bom ter você aqui.",
+  "frase": "A revista eletrônica do Haras Rio São José. Aqui você acompanha cada obra, com fotos de antes e depois e vídeos.",
+  "rotulo_geral": "Andamento geral das obras",
+  "referencia": "31/10/2026",
+  "atualizado_em": "19/11/2026",
+  "geral_pct": 70.2,
+  "geral_anterior_pct": 47.3,
+  "geral_anterior_ref": "setembro",
+  "ressalva": "As datas são previsões, que podem mudar com o clima, o ritmo da execução e a entrega dos fornecedores.",
+  "fonte": "Percentuais e fotos: relatórios do engenheiro responsável pela fiscalização das obras. Data e local impressos em cada foto.",
+  "whatsapp": "5511991468192",
+  "whatsapp_exibir": "(11) 99146-8192",
+  "prazo_resposta": "até 2 dias úteis",
+  "link_mapa": "https://harasriosaojose.github.io/haras-rio-sao-jose-mapa/",
+  "link_agua": "https://tinyurl.com/redeaguahrsj",
+  "forms": {
+   "url": "https://docs.google.com/forms/d/e/1FAIpQLSf0_R9CZf0G_zQcSY0XKL4_RTH1dXQCsdmIEQtppkrQAfIU8Q/formResponse",
+   "tipo": "entry.1956310174",
+   "nome": "entry.2065328925",
+   "unidade": "entry.2033854769",
+   "telefone": "entry.1310959149",
+   "mensagem": "entry.631070095"
+  },
+  "nesta_edicao": [
+   {
+    "t": "Energia: faltam duas etapas, e as duas cabem à Coelba",
+    "ir": "#energia"
+   },
+   {
+    "t": "Rede de água: a parte do empreendimento está 100% concluída",
+    "ir": "#agua"
+   },
+   {
+    "t": "Clube-salão chega a 75,6%, com antes e depois",
+    "ir": "#obras"
+   },
+   {
+    "t": "Mais de 200 fotos do engenheiro e 17 vídeos",
+    "ir": "#videos"
+   }
+  ]
+ },
+ "eletrica": {
+  "selo": "Prioridade número 1",
+  "titulo": "Energia elétrica: onde estamos",
+  "lead": "A ligação da energia é o pedido mais frequente dos clientes e é a nossa prioridade. A rede está instalada, e a parte que cabia ao empreendimento foi feita.",
+  "feito": [
+   "Rede instalada: 215 postes e 13 transformadores",
+   "Vistoria da Coelba realizada: a rede de alta e de baixa tensão foi aprovada, com pedido de ajustes pontuais",
+   "Ajustes a cargo do empreendimento concluídos, com a limpeza e a regularização de ruas",
+   "Nova visita solicitada à Coelba"
+  ],
+  "falta_titulo": "Faltam apenas duas etapas, e as duas cabem à Coelba",
+  "falta": [
+   {
+    "n": "1",
+    "t": "Vistoria final",
+    "d": "É a etapa em que estamos. A Coelba valida os pontos já regularizados."
+   },
+   {
+    "n": "2",
+    "t": "Energização da rede",
+    "d": "É a ligação da energia, a última etapa."
+   }
+  ],
+  "semana": "Toda semana o empreendimento pede um posicionamento à Coelba. A concessionária tem prazos próprios e não informa o dia da visita. Por isso, não há data para a ligação.",
+  "protocolos": "Protocolos da obra na Coelba: Nota de Análise 9201518140 · Nota de Incorporação 9102424512"
+ },
+ "agua": {
+  "selo": "Entregue",
+  "titulo": "Rede de água: a parte do empreendimento está 100% concluída",
+  "lead": "A rede de água dos poços artesianos foi concluída em 30/10/2026.",
+  "entregue": [
+   "3 poços artesianos",
+   "4 reservatórios, com 140 mil litros",
+   "2 redes principais, uma em cada avenida",
+   "Bombeamento com energia solar"
+  ],
+  "agora_titulo": "E o trabalho continua",
+  "agora": "A administração da rede e a ligação da água para os lotes também estão sendo feitas pelo empreendimento, em conjunto com a Associação.",
+  "botao": "Cadastro para a ligação da água"
+ },
+ "obras": [
+  {
+   "id": "clube-salao",
+   "nome": "Clube-salão de festas",
+   "curto": "Clube-salão",
+   "pct": 75.6,
+   "situacao": "execucao",
+   "previsao": "até o fim de dezembro de 2026",
+   "capa": "salao_09.jpg",
+   "resumo": "O espaço para reunir a família e os amigos já tem piso, pintura, janelas e portas.",
+   "feito": [
+    "Piso cerâmico em todos os ambientes",
+    "Pintura interna e externa",
+    "Instalações elétricas e de água",
+    "Janelas de vidro, portas e varanda"
+   ],
+   "falta": [
+    "Parte do esgotamento sanitário, que está em execução",
+    "Divisórias e pias dos banheiros",
+    "Mobiliário e equipamentos"
+   ],
+   "blocos": [
+    {
+     "titulo": "Área externa e salão",
+     "modo": "deslizar",
+     "itens": [
+      {
+       "titulo": "Fachada principal",
+       "antes": "salao_01.jpg",
+       "antes_data": "jul/2026",
+       "depois": "salao_09.jpg",
+       "depois_data": "out/2026",
+       "rot_a": "ANTES",
+       "rot_d": "DEPOIS"
+      },
+      {
+       "titulo": "Salão, com piso, pintura e porta de vidro",
+       "antes": "salao_03.jpg",
+       "antes_data": "jul/2026",
+       "depois": "salao_11.jpg",
+       "depois_data": "out/2026",
+       "rot_a": "ANTES",
+       "rot_d": "DEPOIS"
+      }
+     ]
+    },
+    {
+     "titulo": "Fachada lateral",
+     "modo": "lado",
+     "itens": [
+      {
+       "titulo": "Fachada lateral, com janelas e varanda",
+       "antes": "salao_02.jpg",
+       "antes_data": "jul/2026",
+       "depois": "salao_10.jpg",
+       "depois_data": "out/2026",
+       "rot_a": "ANTES",
+       "rot_d": "DEPOIS"
+      }
+     ]
+    },
+    {
+     "titulo": "Ambientes internos",
+     "modo": "deslizar",
+     "itens": [
+      {
+       "titulo": "Cozinha, com piso, pintura e bancada",
+       "antes": "salao_04.jpg",
+       "antes_data": "jul/2026",
+       "depois": "salao_14.jpg",
+       "depois_data": "nov/2026",
+       "rot_a": "ANTES",
+       "rot_d": "DEPOIS"
+      },
+      {
+       "titulo": "Sanitário, com piso, pintura e louça",
+       "antes": "salao_06.jpg",
+       "antes_data": "jul/2026",
+       "depois": "salao_16.jpg",
+       "depois_data": "nov/2026",
+       "rot_a": "ANTES",
+       "rot_d": "DEPOIS"
+      },
+      {
+       "titulo": "Janela de vidro instalada",
+       "antes": "salao_08.jpg",
+       "antes_data": "jul/2026",
+       "depois": "salao_15.jpg",
+       "depois_data": "nov/2026",
+       "rot_a": "ANTES",
+       "rot_d": "DEPOIS"
+      }
+     ]
+    }
+   ],
+   "galeria": [
+    "eng/salao_01.jpg",
+    "eng/salao_02.jpg",
+    "eng/salao_03.jpg",
+    "eng/salao_04.jpg",
+    "eng/salao_05.jpg",
+    "eng/salao_06.jpg",
+    "eng/salao_07.jpg",
+    "eng/salao_08.jpg",
+    "eng/salao_09.jpg",
+    "eng/salao_10.jpg",
+    "eng/salao_11.jpg",
+    "eng/salao_12.jpg",
+    "eng/salao_13.jpg",
+    "eng/salao_14.jpg",
+    "eng/salao_15.jpg",
+    "eng/salao_16.jpg",
+    "eng/salao_17.jpg",
+    "eng/salao_18.jpg",
+    "eng/salao_19.jpg",
+    "eng/salao_20.jpg"
+   ]
+  },
+  {
+   "id": "sanitarios",
+   "nome": "Sanitários 01 e 02",
+   "curto": "Sanitários",
+   "pct": 67.9,
+   "situacao": "execucao",
+   "previsao": "até o fim de dezembro de 2026",
+   "capa": "ban01_09.jpg",
+   "resumo": "Os dois sanitários da área de lazer já estão revestidos, pintados e com as louças.",
+   "feito": [
+    "Revestimento e pintura",
+    "Instalações elétricas e de água",
+    "Louças e chuveiros",
+    "Rampa de acesso"
+   ],
+   "falta": [
+    "Parte das esquadrias",
+    "Parte do esgotamento sanitário, que está em execução"
+   ],
+   "blocos": [
+    {
+     "titulo": "Sanitário 01",
+     "modo": "deslizar",
+     "itens": [
+      {
+       "titulo": "Frente, com acesso e pintura",
+       "antes": "ban01_03.jpg",
+       "antes_data": "jul/2026",
+       "depois": "ban01_09.jpg",
+       "depois_data": "out/2026",
+       "rot_a": "ANTES",
+       "rot_d": "DEPOIS"
+      },
+      {
+       "titulo": "Calçada de acesso revestida",
+       "antes": "ban01_04.jpg",
+       "antes_data": "jul/2026",
+       "depois": "ban01_14.jpg",
+       "depois_data": "nov/2026",
+       "rot_a": "ANTES",
+       "rot_d": "DEPOIS"
+      },
+      {
+       "titulo": "Ambiente interno, com janela e pintura",
+       "antes": "ban01_06.jpg",
+       "antes_data": "jul/2026",
+       "depois": "ban01_11.jpg",
+       "depois_data": "nov/2026",
+       "rot_a": "ANTES",
+       "rot_d": "DEPOIS"
+      },
+      {
+       "titulo": "Ambiente interno, com piso, pintura e louça",
+       "antes": "ban01_08.jpg",
+       "antes_data": "jul/2026",
+       "depois": "ban01_13.jpg",
+       "depois_data": "nov/2026",
+       "rot_a": "ANTES",
+       "rot_d": "DEPOIS"
+      },
+      {
+       "titulo": "Piso e pintura",
+       "antes": "ban01_01.jpg",
+       "antes_data": "jul/2026",
+       "depois": "ban01_12.jpg",
+       "depois_data": "out/2026",
+       "rot_a": "ANTES",
+       "rot_d": "DEPOIS"
+      },
+      {
+       "titulo": "Cabine, com piso e louça",
+       "antes": "ban01_07.jpg",
+       "antes_data": "jul/2026",
+       "depois": "ban01_16.jpg",
+       "depois_data": "nov/2026",
+       "rot_a": "ANTES",
+       "rot_d": "DEPOIS"
+      }
+     ]
+    },
+    {
+     "titulo": "Sanitário 02",
+     "modo": "deslizar",
+     "itens": [
+      {
+       "titulo": "Frente, com acesso e pintura",
+       "antes": "ban02_01.jpg",
+       "antes_data": "jul/2026",
+       "depois": "ban02_13.jpg",
+       "depois_data": "nov/2026",
+       "rot_a": "ANTES",
+       "rot_d": "DEPOIS"
+      },
+      {
+       "titulo": "Janela de vidro instalada",
+       "antes": "ban02_04.jpg",
+       "antes_data": "jul/2026",
+       "depois": "ban02_15.jpg",
+       "depois_data": "nov/2026",
+       "rot_a": "ANTES",
+       "rot_d": "DEPOIS"
+      },
+      {
+       "titulo": "Teto pintado, com exaustor",
+       "antes": "ban02_05.jpg",
+       "antes_data": "jul/2026",
+       "depois": "ban02_12.jpg",
+       "depois_data": "out/2026",
+       "rot_a": "ANTES",
+       "rot_d": "DEPOIS"
+      },
+      {
+       "titulo": "Cabines, com piso e louças",
+       "antes": "ban02_07.jpg",
+       "antes_data": "jul/2026",
+       "depois": "ban02_11.jpg",
+       "depois_data": "out/2026",
+       "rot_a": "ANTES",
+       "rot_d": "DEPOIS"
+      },
+      {
+       "titulo": "Piso cerâmico assentado",
+       "antes": "ban02_03.jpg",
+       "antes_data": "jul/2026",
+       "depois": "ban02_10.jpg",
+       "depois_data": "out/2026",
+       "rot_a": "ANTES",
+       "rot_d": "DEPOIS"
+      },
+      {
+       "titulo": "Parede pintada, com chuveiros",
+       "antes": "ban02_08.jpg",
+       "antes_data": "jul/2026",
+       "depois": "ban02_14.jpg",
+       "depois_data": "nov/2026",
+       "rot_a": "ANTES",
+       "rot_d": "DEPOIS"
+      }
+     ]
+    }
+   ],
+   "galeria": [
+    "eng/ban01_01.jpg",
+    "eng/ban01_02.jpg",
+    "eng/ban01_03.jpg",
+    "eng/ban01_04.jpg",
+    "eng/ban01_05.jpg",
+    "eng/ban01_06.jpg",
+    "eng/ban01_07.jpg",
+    "eng/ban01_08.jpg",
+    "eng/ban01_09.jpg",
+    "eng/ban01_10.jpg",
+    "eng/ban01_11.jpg",
+    "eng/ban01_12.jpg",
+    "eng/ban01_13.jpg",
+    "eng/ban01_14.jpg",
+    "eng/ban01_15.jpg",
+    "eng/ban01_16.jpg",
+    "eng/ban01_17.jpg",
+    "eng/ban01_18.jpg",
+    "eng/ban01_19.jpg",
+    "eng/ban01_20.jpg",
+    "eng/ban02_01.jpg",
+    "eng/ban02_02.jpg",
+    "eng/ban02_03.jpg",
+    "eng/ban02_04.jpg",
+    "eng/ban02_05.jpg",
+    "eng/ban02_06.jpg",
+    "eng/ban02_07.jpg",
+    "eng/ban02_08.jpg",
+    "eng/ban02_09.jpg",
+    "eng/ban02_10.jpg",
+    "eng/ban02_11.jpg",
+    "eng/ban02_12.jpg",
+    "eng/ban02_13.jpg",
+    "eng/ban02_14.jpg",
+    "eng/ban02_15.jpg",
+    "eng/ban02_16.jpg",
+    "eng/ban02_17.jpg",
+    "eng/ban02_18.jpg",
+    "eng/ban02_19.jpg",
+    "eng/ban02_20.jpg"
+   ]
+  },
+  {
+   "id": "quiosques",
+   "nome": "Quiosques 01, 02 e 03",
+   "curto": "Quiosques",
+   "pct": 57.1,
+   "situacao": "execucao",
+   "previsao": "até o fim de dezembro de 2026",
+   "capa": "qui01_09.jpg",
+   "resumo": "Os três quiosques já têm piso, pintura e instalações.",
+   "feito": [
+    "Piso cerâmico",
+    "Pintura",
+    "Instalações elétricas e de água"
+   ],
+   "falta": [
+    "Churrasqueiras",
+    "Parte do esgotamento sanitário, que está em execução"
+   ],
+   "blocos": [
+    {
+     "titulo": "Os três quiosques",
+     "modo": "deslizar",
+     "itens": [
+      {
+       "titulo": "Quiosque 01",
+       "antes": "qui01_01.jpg",
+       "antes_data": "jul/2026",
+       "depois": "qui01_09.jpg",
+       "depois_data": "out/2026",
+       "rot_a": "ANTES",
+       "rot_d": "DEPOIS"
+      },
+      {
+       "titulo": "Quiosque 02",
+       "antes": "qui02_05.jpg",
+       "antes_data": "jul/2026",
+       "depois": "qui02_11.jpg",
+       "depois_data": "out/2026",
+       "rot_a": "ANTES",
+       "rot_d": "DEPOIS"
+      },
+      {
+       "titulo": "Quiosque 03",
+       "antes": "qui03_01.jpg",
+       "antes_data": "jul/2026",
+       "depois": "qui03_05.jpg",
+       "depois_data": "out/2026",
+       "rot_a": "ANTES",
+       "rot_d": "DEPOIS"
+      }
+     ]
+    },
+    {
+     "titulo": "Piso e acabamento",
+     "modo": "deslizar",
+     "itens": [
+      {
+       "titulo": "Quiosque 01, com piso e pintura",
+       "antes": "qui01_05.jpg",
+       "antes_data": "jul/2026",
+       "depois": "qui01_10.jpg",
+       "depois_data": "out/2026",
+       "rot_a": "ANTES",
+       "rot_d": "DEPOIS"
+      },
+      {
+       "titulo": "Quiosque 02, com piso cerâmico",
+       "antes": "qui02_02.jpg",
+       "antes_data": "jul/2026",
+       "depois": "qui02_09.jpg",
+       "depois_data": "nov/2026",
+       "rot_a": "ANTES",
+       "rot_d": "DEPOIS"
+      },
+      {
+       "titulo": "Quiosque 03, com pintura e bancada",
+       "antes": "qui03_02.jpg",
+       "antes_data": "jul/2026",
+       "depois": "qui03_15.jpg",
+       "depois_data": "nov/2026",
+       "rot_a": "ANTES",
+       "rot_d": "DEPOIS"
+      }
+     ]
+    }
+   ],
+   "galeria": [
+    "eng/qui01_01.jpg",
+    "eng/qui01_02.jpg",
+    "eng/qui01_03.jpg",
+    "eng/qui01_04.jpg",
+    "eng/qui01_05.jpg",
+    "eng/qui01_06.jpg",
+    "eng/qui01_07.jpg",
+    "eng/qui01_08.jpg",
+    "eng/qui01_09.jpg",
+    "eng/qui01_10.jpg",
+    "eng/qui01_11.jpg",
+    "eng/qui01_12.jpg",
+    "eng/qui01_13.jpg",
+    "eng/qui01_14.jpg",
+    "eng/qui01_15.jpg",
+    "eng/qui01_16.jpg",
+    "eng/qui02_01.jpg",
+    "eng/qui02_02.jpg",
+    "eng/qui02_03.jpg",
+    "eng/qui02_04.jpg",
+    "eng/qui02_05.jpg",
+    "eng/qui02_06.jpg",
+    "eng/qui02_07.jpg",
+    "eng/qui02_08.jpg",
+    "eng/qui02_09.jpg",
+    "eng/qui02_10.jpg",
+    "eng/qui02_11.jpg",
+    "eng/qui02_12.jpg",
+    "eng/qui02_13.jpg",
+    "eng/qui02_14.jpg",
+    "eng/qui02_15.jpg",
+    "eng/qui02_16.jpg",
+    "eng/qui03_01.jpg",
+    "eng/qui03_02.jpg",
+    "eng/qui03_03.jpg",
+    "eng/qui03_04.jpg",
+    "eng/qui03_05.jpg",
+    "eng/qui03_06.jpg",
+    "eng/qui03_07.jpg",
+    "eng/qui03_08.jpg",
+    "eng/qui03_09.jpg",
+    "eng/qui03_10.jpg",
+    "eng/qui03_11.jpg",
+    "eng/qui03_12.jpg",
+    "eng/qui03_13.jpg",
+    "eng/qui03_14.jpg",
+    "eng/qui03_15.jpg",
+    "eng/qui03_16.jpg"
+   ]
+  },
+  {
+   "id": "entrada-servico",
+   "nome": "Entrada de serviço",
+   "curto": "Entrada de serviço",
+   "pct": 26.2,
+   "situacao": "execucao",
+   "previsao": null,
+   "capa": "guarita_24.jpg",
+   "resumo": "A entrada para veículos grandes fica ao lado da guarita.",
+   "feito": [
+    "Pilares concluídos",
+    "Portão de correr pronto"
+   ],
+   "falta": [
+    "Instalação do portão",
+    "Pintura, identificação e paisagismo"
+   ],
+   "blocos": [
+    {
+     "titulo": "Como está hoje",
+     "modo": "grade",
+     "itens": [
+      {
+       "foto": "guarita_23.jpg",
+       "leg": "Pilares, nov/2026"
+      },
+      {
+       "foto": "guarita_24.jpg",
+       "leg": "Pilares prontos para o portão, nov/2026"
+      }
+     ]
+    }
+   ],
+   "galeria": [
+    "eng/guarita_22.jpg",
+    "eng/guarita_23.jpg",
+    "eng/guarita_24.jpg",
+    "eng/guarita_25.jpg"
+   ]
+  },
+  {
+   "id": "quadra",
+   "nome": "Quadra de areia",
+   "curto": "Quadra",
+   "pct": 8.8,
+   "situacao": "execucao",
+   "previsao": "até o fim de março de 2027",
+   "capa": null,
+   "resumo": "Os serviços iniciais estão em andamento.",
+   "feito": [
+    "Serviços preliminares e movimento de terra iniciados"
+   ],
+   "falta": [
+    "Base e areia",
+    "Alambrado, portões e iluminação"
+   ]
+  },
+  {
+   "id": "piscina",
+   "nome": "Piscina",
+   "curto": "Piscina",
+   "pct": 0,
+   "situacao": "iniciar",
+   "previsao": "até o fim de março de 2027",
+   "capa": null,
+   "resumo": "A obra da piscina vem na sequência da quadra."
+  },
+  {
+   "id": "baias-redondel",
+   "nome": "Baias e redondel",
+   "curto": "Baias e redondel",
+   "pct": 0,
+   "situacao": "iniciar",
+   "previsao": "até o fim de junho de 2027",
+   "capa": null,
+   "resumo": "É a última etapa das áreas comuns."
+  },
+  {
+   "id": "rede-agua",
+   "nome": "Rede de água e poços artesianos",
+   "curto": "Rede de água",
+   "pct": 100,
+   "situacao": "concluida",
+   "previsao": "Concluída em 30/10/2026",
+   "capa": "agua_27.jpg",
+   "resumo": "A rede foi executada por inteiro, com testes de pressão e a ativação do fluxo de água.",
+   "feito": [
+    "3 poços artesianos, com estudo geofísico",
+    "4 reservatórios, com 140 mil litros",
+    "3.200 m de rede de distribuição",
+    "Bombeamento com energia solar"
+   ],
+   "blocos": [
+    {
+     "titulo": "Durante a obra e concluída",
+     "modo": "lado",
+     "itens": [
+      {
+       "titulo": "Das valas ao ponto de água junto à via",
+       "antes": "agua_01.jpg",
+       "antes_data": "out/2026",
+       "depois": "agua_23.jpg",
+       "depois_data": "out/2026",
+       "rot_a": "DURANTE",
+       "rot_d": "CONCLUÍDA"
+      },
+      {
+       "titulo": "Reservatório em operação",
+       "antes": "agua_04.jpg",
+       "antes_data": "out/2026",
+       "depois": "agua_27.jpg",
+       "depois_data": "out/2026",
+       "rot_a": "DURANTE",
+       "rot_d": "CONCLUÍDA"
+      },
+      {
+       "titulo": "Registros e ramais de distribuição",
+       "antes": "agua_03.jpg",
+       "antes_data": "out/2026",
+       "depois": "agua_33.jpg",
+       "depois_data": "out/2026",
+       "rot_a": "DURANTE",
+       "rot_d": "CONCLUÍDA"
+      }
+     ]
+    }
+   ],
+   "galeria": [
+    "eng/agua_01.jpg",
+    "eng/agua_02.jpg",
+    "eng/agua_03.jpg",
+    "eng/agua_04.jpg",
+    "eng/agua_05.jpg",
+    "eng/agua_06.jpg",
+    "eng/agua_07.jpg",
+    "eng/agua_08.jpg",
+    "eng/agua_09.jpg",
+    "eng/agua_10.jpg",
+    "eng/agua_11.jpg",
+    "eng/agua_12.jpg",
+    "eng/agua_13.jpg",
+    "eng/agua_14.jpg",
+    "eng/agua_15.jpg",
+    "eng/agua_16.jpg",
+    "eng/agua_17.jpg",
+    "eng/agua_18.jpg",
+    "eng/agua_19.jpg",
+    "eng/agua_20.jpg",
+    "eng/agua_21.jpg",
+    "eng/agua_22.jpg",
+    "eng/agua_23.jpg",
+    "eng/agua_24.jpg",
+    "eng/agua_25.jpg",
+    "eng/agua_26.jpg",
+    "eng/agua_27.jpg",
+    "eng/agua_28.jpg",
+    "eng/agua_29.jpg",
+    "eng/agua_30.jpg",
+    "eng/agua_31.jpg",
+    "eng/agua_32.jpg",
+    "eng/agua_33.jpg",
+    "eng/agua_34.jpg",
+    "eng/agua_35.jpg",
+    "eng/agua_36.jpg"
+   ]
+  },
+  {
+   "id": "guarita",
+   "nome": "Guarita",
+   "curto": "Guarita",
+   "pct": 100,
+   "situacao": "concluida",
+   "previsao": "Concluída",
+   "capa": "guarita_11.jpg",
+   "resumo": "A guarita foi revitalizada, com nova identificação, calçadas e jardim.",
+   "feito": [
+    "Pintura e nova identificação",
+    "Calçadas e piso novo",
+    "Jardim",
+    "Portão lateral e muro tratados"
+   ],
+   "blocos": [
+    {
+     "titulo": "Guarita",
+     "modo": "deslizar",
+     "itens": [
+      {
+       "titulo": "Vista frontal",
+       "antes": "guarita_05.jpg",
+       "antes_data": "jul/2026",
+       "depois": "guarita_11.jpg",
+       "depois_data": "nov/2026",
+       "rot_a": "ANTES",
+       "rot_d": "DEPOIS"
+      },
+      {
+       "titulo": "Fachada, com a nova identificação",
+       "antes": "guarita_06.jpg",
+       "antes_data": "jul/2026",
+       "depois": "guarita_21.jpg",
+       "depois_data": "nov/2026",
+       "rot_a": "ANTES",
+       "rot_d": "DEPOIS"
+      },
+      {
+       "titulo": "Área coberta, com piso novo",
+       "antes": "guarita_02.jpg",
+       "antes_data": "jul/2026",
+       "depois": "guarita_18.jpg",
+       "depois_data": "nov/2026",
+       "rot_a": "ANTES",
+       "rot_d": "DEPOIS"
+      }
+     ]
+    },
+    {
+     "titulo": "Acesso",
+     "modo": "deslizar",
+     "itens": [
+      {
+       "titulo": "Portão lateral, com piso novo",
+       "antes": "guarita_08.jpg",
+       "antes_data": "jul/2026",
+       "depois": "guarita_17.jpg",
+       "depois_data": "nov/2026",
+       "rot_a": "ANTES",
+       "rot_d": "DEPOIS"
+      },
+      {
+       "titulo": "Muro pintado e acesso regularizado",
+       "antes": "guarita_09.jpg",
+       "antes_data": "jul/2026",
+       "depois": "guarita_19.jpg",
+       "depois_data": "nov/2026",
+       "rot_a": "ANTES",
+       "rot_d": "DEPOIS"
+      }
+     ]
+    }
+   ],
+   "galeria": [
+    "eng/guarita_01.jpg",
+    "eng/guarita_02.jpg",
+    "eng/guarita_03.jpg",
+    "eng/guarita_04.jpg",
+    "eng/guarita_05.jpg",
+    "eng/guarita_06.jpg",
+    "eng/guarita_07.jpg",
+    "eng/guarita_08.jpg",
+    "eng/guarita_09.jpg",
+    "eng/guarita_10.jpg",
+    "eng/guarita_11.jpg",
+    "eng/guarita_12.jpg",
+    "eng/guarita_13.jpg",
+    "eng/guarita_14.jpg",
+    "eng/guarita_15.jpg",
+    "eng/guarita_16.jpg",
+    "eng/guarita_17.jpg",
+    "eng/guarita_18.jpg",
+    "eng/guarita_19.jpg",
+    "eng/guarita_20.jpg",
+    "eng/guarita_21.jpg"
+   ]
+  },
+  {
+   "id": "rua-pedras",
+   "nome": "Rua com pedras",
+   "curto": "Rua com pedras",
+   "pct": 100,
+   "situacao": "concluida",
+   "previsao": "Concluída",
+   "capa": "pedr_depois_1.jpg",
+   "resumo": "As pedras que impediam a passagem foram retiradas e a rua foi regularizada.",
+   "feito": [
+    "300 m³ de pedras retiradas",
+    "Rua regularizada e liberada"
+   ],
+   "blocos": [
+    {
+     "titulo": "Antes e depois",
+     "modo": "lado",
+     "itens": [
+      {
+       "titulo": "Pedras sobre a via, trecho liberado",
+       "antes": "eng/ruaped_04.jpg",
+       "antes_data": "jul/2026",
+       "depois": "eng/ruaped_05.jpg",
+       "depois_data": "out/2026",
+       "rot_a": "ANTES",
+       "rot_d": "DEPOIS"
+      },
+      {
+       "titulo": "Leito regularizado e cascalhado",
+       "antes": "eng/ruaped_03.jpg",
+       "antes_data": "jul/2026",
+       "depois": "eng/ruaped_08.jpg",
+       "depois_data": "out/2026",
+       "rot_a": "ANTES",
+       "rot_d": "DEPOIS"
+      },
+      {
+       "titulo": "Trecho com pedras e vegetação, liberado",
+       "antes": "eng/ruaped_01.jpg",
+       "antes_data": "jul/2026",
+       "depois": "eng/ruaped_06.jpg",
+       "depois_data": "out/2026",
+       "rot_a": "ANTES",
+       "rot_d": "DEPOIS"
+      },
+      {
+       "titulo": "Via desobstruída e cascalhada",
+       "antes": "eng/ruaped_adm.jpg",
+       "antes_data": "",
+       "depois": "eng/ruaped_07.jpg",
+       "depois_data": "out/2026",
+       "rot_a": "ANTES",
+       "rot_d": "DEPOIS"
+      }
+     ]
+    }
+   ],
+   "galeria": [
+    "eng/ruaped_01.jpg",
+    "eng/ruaped_02.jpg",
+    "eng/ruaped_03.jpg",
+    "eng/ruaped_04.jpg",
+    "eng/ruaped_05.jpg",
+    "eng/ruaped_06.jpg",
+    "eng/ruaped_07.jpg",
+    "eng/ruaped_08.jpg"
+   ]
+  },
+  {
+   "id": "rua-alagamento",
+   "nome": "Rua com alagamento",
+   "curto": "Rua com alagamento",
+   "pct": 100,
+   "situacao": "concluida",
+   "previsao": "Concluída",
+   "capa": "alag_depois_1.jpg",
+   "resumo": "A rua que alagava foi regularizada e cascalhada. Ao todo, três ruas foram desobstruídas.",
+   "feito": [
+    "Trecho regularizado",
+    "Rua liberada para a passagem"
+   ],
+   "blocos": [
+    {
+     "titulo": "Antes e depois",
+     "modo": "lado",
+     "itens": [
+      {
+       "titulo": "Trecho em direção norte",
+       "antes": "eng/rualag_01.jpg",
+       "antes_data": "ago/2026",
+       "depois": "eng/rualag_16.jpg",
+       "depois_data": "out/2026",
+       "rot_a": "ANTES",
+       "rot_d": "DEPOIS"
+      },
+      {
+       "titulo": "Trecho em direção sudoeste",
+       "antes": "eng/rualag_02.jpg",
+       "antes_data": "ago/2026",
+       "depois": "eng/rualag_15.jpg",
+       "depois_data": "out/2026",
+       "rot_a": "ANTES",
+       "rot_d": "DEPOIS"
+      },
+      {
+       "titulo": "Subida em direção sul",
+       "antes": "eng/rualag_03.jpg",
+       "antes_data": "ago/2026",
+       "depois": "eng/rualag_13.jpg",
+       "depois_data": "out/2026",
+       "rot_a": "ANTES",
+       "rot_d": "DEPOIS"
+      },
+      {
+       "titulo": "Trecho regularizado e cascalhado",
+       "antes": "eng/rualag_04.jpg",
+       "antes_data": "ago/2026",
+       "depois": "eng/rualag_12.jpg",
+       "depois_data": "out/2026",
+       "rot_a": "ANTES",
+       "rot_d": "DEPOIS"
+      },
+      {
+       "titulo": "Área onde a água acumulava",
+       "antes": "eng/rualag_05.jpg",
+       "antes_data": "ago/2026",
+       "depois": "eng/rualag_11.jpg",
+       "depois_data": "out/2026",
+       "rot_a": "ANTES",
+       "rot_d": "DEPOIS"
+      },
+      {
+       "titulo": "Máquinas em operação",
+       "antes": "eng/rualag_06.jpg",
+       "antes_data": "ago/2026",
+       "depois": "eng/rualag_14.jpg",
+       "depois_data": "out/2026",
+       "rot_a": "ANTES",
+       "rot_d": "DURANTE"
+      }
+     ]
+    },
+    {
+     "titulo": "Mais uma rua desobstruída",
+     "modo": "lado",
+     "itens": [
+      {
+       "titulo": "Via tomada pela vegetação, desobstruída e regularizada",
+       "antes": "eng/rua1_antes.jpg",
+       "antes_data": "",
+       "depois": "eng/rua1_depois.jpg",
+       "depois_data": "",
+       "rot_a": "ANTES",
+       "rot_d": "DEPOIS"
+      },
+      {
+       "titulo": "Trecho ao lado da rede elétrica, regularizado e cascalhado",
+       "antes": "eng/rua2_antes_a.jpg",
+       "antes_data": "",
+       "depois": "eng/rua2_depois_a.jpg",
+       "depois_data": "",
+       "rot_a": "ANTES",
+       "rot_d": "DEPOIS"
+      },
+      {
+       "titulo": "Leito regularizado",
+       "antes": "eng/rua2_antes_b.jpg",
+       "antes_data": "",
+       "depois": "eng/rua2_depois_b.jpg",
+       "depois_data": "",
+       "rot_a": "ANTES",
+       "rot_d": "DEPOIS"
+      }
+     ]
+    }
+   ],
+   "galeria": [
+    "eng/rualag_01.jpg",
+    "eng/rualag_02.jpg",
+    "eng/rualag_03.jpg",
+    "eng/rualag_04.jpg",
+    "eng/rualag_05.jpg",
+    "eng/rualag_06.jpg",
+    "eng/rualag_07.jpg",
+    "eng/rualag_08.jpg",
+    "eng/rualag_09.jpg",
+    "eng/rualag_10.jpg",
+    "eng/rualag_11.jpg",
+    "eng/rualag_12.jpg",
+    "eng/rualag_13.jpg",
+    "eng/rualag_14.jpg",
+    "eng/rualag_15.jpg",
+    "eng/rualag_16.jpg"
+   ]
+  },
+  {
+   "id": "placas",
+   "nome": "Placas das ruas",
+   "curto": "Placas",
+   "pct": 100,
+   "situacao": "concluida",
+   "previsao": "Instaladas em novembro de 2026",
+   "capa": "guarita_27.jpg",
+   "resumo": "14 placas de identificação instaladas, no padrão visual do empreendimento.",
+   "feito": [
+    "14 placas instaladas nas ruas e avenidas"
+   ],
+   "blocos": [
+    {
+     "titulo": "Algumas das placas",
+     "modo": "grade",
+     "itens": [
+      {
+       "foto": "guarita_27.jpg",
+       "leg": "Rua 01"
+      },
+      {
+       "foto": "guarita_28.jpg",
+       "leg": "Avenida do Umbuzeiro"
+      },
+      {
+       "foto": "guarita_29.jpg",
+       "leg": "Rua 12"
+      },
+      {
+       "foto": "guarita_31.jpg",
+       "leg": "Rua 09"
+      },
+      {
+       "foto": "guarita_26.jpg",
+       "leg": "Avenida Pau Ferro"
+      },
+      {
+       "foto": "guarita_30.jpg",
+       "leg": "Placa de rua"
+      }
+     ]
+    }
+   ],
+   "galeria": [
+    "eng/guarita_26.jpg",
+    "eng/guarita_27.jpg",
+    "eng/guarita_28.jpg",
+    "eng/guarita_29.jpg",
+    "eng/guarita_30.jpg",
+    "eng/guarita_31.jpg",
+    "eng/guarita_32.jpg"
+   ]
+  }
+ ],
+ "videos": {
+  "destaques": [
+   {
+    "id": "por-do-sol",
+    "titulo": "E se este pôr do sol fosse seu?",
+    "dur": "1 min"
+   },
+   {
+    "id": "tamanho",
+    "titulo": "Olha o tamanho desse lugar",
+    "dur": "30 s"
+   },
+   {
+    "id": "agua",
+    "titulo": "A água chegou",
+    "dur": "26 s"
+   },
+   {
+    "id": "relogio",
+    "titulo": "Aqui o relógio anda mais devagar",
+    "dur": "27 s"
+   },
+   {
+    "id": "onde-fica",
+    "titulo": "Onde fica o Haras",
+    "dur": "15 s"
+   }
+  ],
+  "ruas": [
+   {
+    "id": "rua-01",
+    "titulo": "Rua 01",
+    "dur": "28 s"
+   },
+   {
+    "id": "rua-02",
+    "titulo": "Rua 02",
+    "dur": "28 s"
+   },
+   {
+    "id": "rua-03",
+    "titulo": "Rua 03",
+    "dur": "28 s"
+   },
+   {
+    "id": "rua-05",
+    "titulo": "Rua 05",
+    "dur": "28 s"
+   },
+   {
+    "id": "rua-06",
+    "titulo": "Rua 06",
+    "dur": "28 s"
+   },
+   {
+    "id": "rua-07",
+    "titulo": "Rua 07",
+    "dur": "28 s"
+   },
+   {
+    "id": "rua-08",
+    "titulo": "Rua 08",
+    "dur": "28 s"
+   },
+   {
+    "id": "rua-09",
+    "titulo": "Rua 09",
+    "dur": "28 s"
+   },
+   {
+    "id": "rua-10",
+    "titulo": "Rua 10",
+    "dur": "28 s"
+   },
+   {
+    "id": "rua-11",
+    "titulo": "Rua 11",
+    "dur": "28 s"
+   },
+   {
+    "id": "rua-12",
+    "titulo": "Rua 12",
+    "dur": "28 s"
+   },
+   {
+    "id": "avenida-umbuzeiro",
+    "titulo": "Avenida Umbuzeiro",
+    "dur": "28 s"
+   }
+  ]
+ }
+}

@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>News Haras · Acompanhamento das obras</title>
+  <meta name="description" content="Acompanhe o andamento das obras do Chacreamento Haras Rio São José, com fotos de antes e depois e vídeos.">
+  <meta name="theme-color" content="#183827">
+  <meta property="og:title" content="News Haras: acompanhe as obras do Haras Rio São José">
+  <meta property="og:description" content="O andamento de cada obra, com fotos de antes e depois e vídeos.">
+  <meta property="og:image" content="assets/capa.jpg">
+  <link rel="icon" href="assets/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/app.css?v=20261119c">
+</head>
+<body>
+  <main id="tela"></main>
+  <footer class="rodape">
+    <p id="rodape-fonte"></p>
+    <p id="rodape-ressalva"></p>
+    <p>Chacreamento Haras Rio São José Ltda. · CNPJ 37.404.884/0001-50 · Rua Cardeal Silva, nº 58, Centro, Poções, Bahia</p>
+  </footer>
+  <nav class="barra-nav" aria-label="Seções">
+    <a href="#inicio" data-s="inicio"><svg viewBox="0 0 24 24"><path d="M4 11l8-7 8 7v9h-5v-6h-6v6H4z"/></svg>Início</a>
+    <a href="#obras" data-s="obras"><svg viewBox="0 0 24 24"><path d="M4 20V9l8-5 8 5v11M9 20v-6h6v6"/></svg>Obras</a>
+    <a href="#videos" data-s="videos"><svg viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="14" rx="3"/><path d="M10.5 9.5l4 2.5-4 2.5z"/></svg>Vídeos</a>
+    <a href="#contato" data-s="contato"><svg viewBox="0 0 24 24"><path d="M4.5 19.5l1.2-4A7.5 7.5 0 1 1 9 18.6z"/></svg>Fale conosco</a>
+  </nav>
+  <div class="modal" id="modal" hidden><button class="fechar" aria-label="Fechar">×</button><button class="seta e" data-passar="-1" aria-label="Foto anterior">‹</button><div class="palco"></div><button class="seta d" data-passar="1" aria-label="Próxima foto">›</button><p class="leg"></p></div>
+  <noscript><p style="padding:24px">Para ver o andamento das obras, ative o JavaScript do navegador.</p></noscript>
+  <script src="js/app.js?v=20261119c"></script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+# -*- coding: utf-8 -*-
+"""Prepara as mídias do app de obras: capa, fotos (antes e depois) e vídeos em 720p com pôster.
+Uso: python -I scripts/preparar_midia.py   (não refaz o que já existe; apague o arquivo para refazer)"""
+import glob
+import os
+import shutil
+import subprocess
+import sys
+
+sys.path.insert(0, r"D:\Programas\pylibs")
+sys.stdout.reconfigure(encoding="utf-8")
+from PIL import Image
+
+RAIZ = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+PROJ = os.path.dirname(RAIZ)
+NA = r"D:\Haras Rio São José\Auditoria conta Bradesco Jachson 23\Nova Adm Marcelo Julho 2026"
+IG = NA + r"\Vendas Novas\Instagram"
+BR = NA + r"\Novas Vendas\Novos vídeos drone out 26\brutos"
+FF = r"D:\Programas\ffmpeg\bin\ffmpeg"
+FOTOS = os.path.join(RAIZ, "assets", "fotos")
+VID = os.path.join(RAIZ, "assets", "videos")
+os.makedirs(FOTOS, exist_ok=True)
+os.makedirs(VID, exist_ok=True)
+
+
+def foto(origem, nome, larg=1100):
+    dst = os.path.join(FOTOS, nome)
+    if os.path.exists(dst):
+        return
+    im = Image.open(origem).convert("RGB")
+    if im.width > larg:
+        im = im.resize((larg, round(im.height * larg / im.width)), Image.LANCZOS)
+    im.save(dst, quality=80, optimize=True, progressive=True)
+
+
+# fotos já recortadas e pareadas dos comunicados e da prestação de outubro
+for f in glob.glob(os.path.join(PROJ, "administracao-haras", "comunicados", "_fotos_lazer", "*.jpg")):
+    b = os.path.basename(f)
+    foto(f, b.replace("_1.5", "").replace("_0.75", ""))
+for f in glob.glob(os.path.join(PROJ, "administracao-haras", "comunicados", "_fotos_ruas", "*.jpg")):
+    foto(f, os.path.basename(f))
+for f in glob.glob(os.path.join(PROJ, "planejamento-estrategico", "02-documento", "outubro", "midia", "agua_*.jpg")):
+    foto(f, os.path.basename(f))
+
+# capa: a entrada do Haras hoje (drone, out/2026)
+capa = os.path.join(RAIZ, "assets", "capa.jpg")
+if not os.path.exists(capa):
+    tmp = os.path.join(RAIZ, "assets", "_capa.png")
+    subprocess.run([FF, "-y", "-v", "error", "-ss", "26", "-i", BR + r"\entrada principal.MP4", "-frames:v", "1",
+                    "-vf", "eq=saturation=1.22:contrast=1.06:brightness=0.02", tmp], check=True)
+    Image.open(tmp).convert("RGB").save(capa, quality=84, optimize=True, progressive=True)
+    os.remove(tmp)
+
+# vídeos (id, origem)
+VIDEOS = [
+    ("por-do-sol", IG + r"\Impulsionar 04-11-2026\Video - E se este por do sol fosse seu.mp4"),
+    ("tamanho", IG + r"\Validacao 04-11-2026\Reel - Olha o tamanho desse lugar.mp4"),
+    ("agua", IG + r"\Semana 05 a 11-11-2026\Dia 6 - Post - A noticia que todos esperavam.mp4"),
+    ("relogio", IG + r"\Semana 05 a 11-11-2026\Dia 2 - Post - O relogio anda mais devagar.mp4"),
+    ("onde-fica", IG + r"\Validacao 04-11-2026\Story - Onde fica.mp4"),
+]
+for f in sorted(glob.glob(IG + r"\Serie Ruas 17-11-2026\Dia *.mp4")):
+    n = os.path.basename(f)[9:-4].lower().replace(" ", "-")  # "rua-01", "avenida-umbuzeiro"
+    VIDEOS.append((n, f))
+for vid, src in VIDEOS:
+    out = os.path.join(VID, vid + ".mp4")
+    if not os.path.exists(out):
+        subprocess.run([FF, "-y", "-v", "error", "-i", src, "-vf", "scale=720:-2", "-an", "-c:v", "libx264", "-preset", "slow", "-crf", "28",
+                        "-maxrate", "1100k", "-bufsize", "2200k", "-pix_fmt", "yuv420p", "-movflags", "+faststart", out], check=True)
+    post = os.path.join(VID, vid + ".jpg")
+    if not os.path.exists(post):
+        t = "6" if vid.startswith(("rua", "avenida")) else "2"
+        subprocess.run([FF, "-y", "-v", "error", "-ss", t, "-i", out, "-frames:v", "1", "-vf", "scale=480:-2", "-q:v", "5", post], check=True)
+    print(vid, round(os.path.getsize(out) / 1e6, 1), "MB", flush=True)
+print("fotos", len(os.listdir(FOTOS)), "· total", round(sum(os.path.getsize(os.path.join(d, f)) for d, _, fs in os.walk(os.path.join(RAIZ, "assets")) for f in fs) / 1e6, 1), "MB")
