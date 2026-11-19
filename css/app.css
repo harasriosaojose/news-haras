@@ -362,3 +362,5 @@ section.bloco { padding-top: 34px; }
 
 .botao[hidden] { display: none; }
 .fotos button:first-child { grid-column: span 2; grid-row: span 2; }
+
+.destaque.agua .botao.verde { min-height: 58px; line-height: 1.25; text-align: left; padding: 12px 16px; }

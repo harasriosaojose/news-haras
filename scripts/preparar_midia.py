@@ -78,10 +78,31 @@ VIDEOS = [
 for f in sorted(glob.glob(IG + r"\Serie Ruas 17-11-2026\Dia *.mp4")):
     n = os.path.basename(f)[9:-4].lower().replace(" ", "-")  # "rua-01", "avenida-umbuzeiro"
     VIDEOS.append((n, f))
+def fim_util(src):
+    """Segundo em que começa a tela final de venda (fundo verde com 'Chácaras a partir de...' e '% vendido').
+    A revista é informativa: os vídeos entram sem essa tela (revisão de compliance de 19/11/2026)."""
+    dur = float(subprocess.run([FF[:-6] + "ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", src], capture_output=True, text=True).stdout)
+    t, corte = dur - 0.3, None
+    while t > dur - 12:
+        raw = subprocess.run([FF, "-v", "error", "-ss", "%.2f" % t, "-i", src, "-frames:v", "1", "-vf", "scale=16:28", "-f", "rawvideo", "-pix_fmt", "rgb24", "-"], capture_output=True).stdout
+        if len(raw) < 16 * 28 * 3:
+            t -= 0.25; continue
+        px = [raw[i:i + 3] for i in range(0, len(raw), 3)]
+        verdes = sum(1 for r, g, b in px if abs(r - 24) < 26 and abs(g - 56) < 26 and abs(b - 39) < 26)
+        if verdes / len(px) > 0.6:
+            corte = t
+        elif corte is not None:
+            break
+        t -= 0.25
+    return (corte - 0.45) if corte else dur
+
+
 for vid, src in VIDEOS:
     out = os.path.join(VID, vid + ".mp4")
     if not os.path.exists(out):
-        subprocess.run([FF, "-y", "-v", "error", "-i", src, "-vf", "scale=720:-2", "-an", "-c:v", "libx264", "-preset", "slow", "-crf", "28",
+        ate = fim_util(src)
+        print("  ", vid, "até", round(ate, 1), "s", flush=True)
+        subprocess.run([FF, "-y", "-v", "error", "-i", src, "-t", "%.2f" % ate, "-vf", "scale=720:-2", "-an", "-c:v", "libx264", "-preset", "slow", "-crf", "28",
                         "-maxrate", "1100k", "-bufsize", "2200k", "-pix_fmt", "yuv420p", "-movflags", "+faststart", out], check=True)
     post = os.path.join(VID, vid + ".jpg")
     if not os.path.exists(post):

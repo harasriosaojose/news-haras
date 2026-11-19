@@ -5,7 +5,7 @@
   "edicao": "Edição nº 1 · Novembro de 2026",
   "saudacao": "Seja bem-vindo ao News Haras",
   "exclusivo": "Exclusivo para você, cliente do Haras",
-  "frase": "O relatório completo do Haras Rio São José, feito para você: cada obra, a energia, a água, fotos de antes e depois e vídeos.",
+  "frase": "O acompanhamento das obras do Haras Rio São José, feito para você: cada obra, a energia, a água, fotos de antes e depois e vídeos.",
   "rotulo_geral": "Andamento geral das obras",
   "referencia": "31/10/2026",
   "atualizado_em": "19/11/2026",
@@ -13,10 +13,11 @@
   "geral_anterior_pct": 47.3,
   "geral_anterior_ref": "setembro",
   "ressalva": "As datas são previsões, que podem mudar com o clima, o ritmo da execução e a entrega dos fornecedores.",
-  "fonte": "Percentuais e fotos: relatórios do engenheiro responsável pela fiscalização das obras. Data e local impressos em cada foto.",
+  "fonte": "Percentuais e fotos: relatórios do engenheiro responsável pela fiscalização das obras. Data e local impressos na maior parte das fotos.",
   "whatsapp": "5511991468192",
   "whatsapp_exibir": "(11) 99146-8192",
-  "whatsapp_escritorio": "",
+  "whatsapp_escritorio": "5577981272671",
+  "whatsapp_escritorio_exibir": "(77) 98127-2671",
   "endereco": "Rua Cardeal Silva, nº 58, Centro, Poções, Bahia",
   "mensal": "O News Haras é atualizado todos os meses. Acompanhe as obras direto por aqui.",
   "prazo_resposta": "até 2 dias úteis",
@@ -32,7 +33,7 @@
   },
   "nesta_edicao": [
    {
-    "t": "Energia: faltam duas etapas, e as duas cabem à Coelba",
+    "t": "Energia: faltam duas etapas, e as duas dependem da Coelba",
     "ir": "#energia"
    },
    {
@@ -48,11 +49,11 @@
     "ir": "#obra=quadra"
    },
    {
-    "t": "Documentação legal: 34 glebas registradas, CCIR e ITR em dia",
+    "t": "Documentação legal: 34 glebas registradas, CCIR e ITR 2026 regularizados",
     "ir": "#legal"
    },
    {
-    "t": "Mais de 200 fotos do engenheiro e 17 vídeos",
+    "t": "200 fotos do engenheiro e 17 vídeos",
     "ir": "#videos"
    }
   ]
@@ -67,17 +68,17 @@
    "Ajustes a cargo do empreendimento concluídos, com a limpeza e a regularização de ruas",
    "Nova visita solicitada à Coelba"
   ],
-  "falta_titulo": "Faltam apenas duas etapas, e as duas cabem à Coelba",
+  "falta_titulo": "Faltam duas etapas, e as duas dependem da Coelba",
   "falta": [
    {
     "n": "1",
     "t": "Vistoria final",
-    "d": "É a etapa em que estamos. A Coelba valida os pontos já regularizados."
+    "d": "É a etapa em que estamos. A Coelba valida os pontos já regularizados. Se ela pedir algum novo ajuste, ele será feito e informado aqui."
    },
    {
     "n": "2",
     "t": "Energização da rede",
-    "d": "É a ligação da energia, a última etapa."
+    "d": "É quando a Coelba liga a energia na rede do Haras. Depois, a ligação de cada unidade segue as regras da Coelba."
    }
   ],
   "semana": "Toda semana o empreendimento pede um posicionamento à Coelba. A concessionária tem prazos próprios e não informa o dia da visita. Por isso, não há data para a ligação.",
@@ -93,9 +94,9 @@
    "2 redes principais, uma em cada avenida",
    "Bombeamento com energia solar"
   ],
-  "agora_titulo": "E o trabalho continua",
-  "agora": "A administração da rede e a ligação da água para os lotes também estão sendo feitas pelo empreendimento, em conjunto com a Associação.",
-  "botao": "Cadastro para a ligação da água"
+  "agora_titulo": "Agora, a etapa das ligações",
+  "agora": "O empreendimento segue trabalhando: por 3 meses, ele e a Associação cuidam juntos da administração da rede e da ligação da água aos lotes, tempo para a Associação se organizar. Depois, a administração segue com a Associação. A ligação dentro do lote (kit, escavação, mangueira interna e reservatório) é feita pelo proprietário, com a orientação da equipe. A água da rede é para uso doméstico.",
+  "botao": "Clique aqui e solicite a ligação do ponto de água do seu lote"
  },
  "obras": [
   {
@@ -106,7 +107,7 @@
    "situacao": "coelba",
    "previsao": null,
    "capa": "eletrica_1.jpg",
-   "resumo": "A rede está instalada em todas as ruas. Faltam a vistoria final e a energização, que cabem à Coelba.",
+   "resumo": "A rede está instalada em todas as ruas. Faltam a vistoria final e a energização, que dependem da Coelba.",
    "feito": [
     "Rede instalada: 215 postes e 13 transformadores",
     "Vistoria da Coelba realizada: a rede de alta e de baixa tensão foi aprovada, com pedido de ajustes pontuais",
@@ -168,8 +169,8 @@
    ],
    "falta": [
     "Parte do esgotamento sanitário, que está em execução",
-    "Divisórias e pias dos banheiros",
-    "Mobiliário e equipamentos"
+    "Divisórias dos banheiros com chuveiro",
+    "Pias dos banheiros"
    ],
    "blocos": [
     {
@@ -718,7 +719,7 @@
        "rot_d": "CONCLUÍDA"
       },
       {
-       "titulo": "Registros e ramais de distribuição",
+       "titulo": "Registros da rede de distribuição",
        "antes": "agua_03.jpg",
        "antes_data": "out/2026",
        "depois": "agua_33.jpg",
@@ -1126,17 +1127,17 @@
    {
     "id": "tamanho",
     "titulo": "Olha o tamanho desse lugar",
-    "dur": "30 s"
+    "dur": "26 s"
    },
    {
     "id": "agua",
     "titulo": "A água chegou",
-    "dur": "26 s"
+    "dur": "22 s"
    },
    {
     "id": "relogio",
     "titulo": "Aqui o relógio anda mais devagar",
-    "dur": "27 s"
+    "dur": "23 s"
    },
    {
     "id": "onde-fica",
@@ -1148,62 +1149,62 @@
    {
     "id": "rua-01",
     "titulo": "Rua 01",
-    "dur": "28 s"
+    "dur": "24 s"
    },
    {
     "id": "rua-02",
     "titulo": "Rua 02",
-    "dur": "28 s"
+    "dur": "24 s"
    },
    {
     "id": "rua-03",
     "titulo": "Rua 03",
-    "dur": "28 s"
+    "dur": "24 s"
    },
    {
     "id": "rua-05",
     "titulo": "Rua 05",
-    "dur": "28 s"
+    "dur": "24 s"
    },
    {
     "id": "rua-06",
     "titulo": "Rua 06",
-    "dur": "28 s"
+    "dur": "24 s"
    },
    {
     "id": "rua-07",
     "titulo": "Rua 07",
-    "dur": "28 s"
+    "dur": "24 s"
    },
    {
     "id": "rua-08",
     "titulo": "Rua 08",
-    "dur": "28 s"
+    "dur": "24 s"
    },
    {
     "id": "rua-09",
     "titulo": "Rua 09",
-    "dur": "28 s"
+    "dur": "24 s"
    },
    {
     "id": "rua-10",
     "titulo": "Rua 10",
-    "dur": "28 s"
+    "dur": "24 s"
    },
    {
     "id": "rua-11",
     "titulo": "Rua 11",
-    "dur": "28 s"
+    "dur": "24 s"
    },
    {
     "id": "rua-12",
     "titulo": "Rua 12",
-    "dur": "28 s"
+    "dur": "24 s"
    },
    {
     "id": "avenida-umbuzeiro",
     "titulo": "Avenida Umbuzeiro",
-    "dur": "28 s"
+    "dur": "24 s"
    }
   ]
  },
@@ -1225,11 +1226,11 @@
    },
    {
     "t": "Próxima etapa: as escrituras",
-    "d": "A formalização das escrituras terá início a partir da entrega do empreendimento, prevista para o segundo semestre de 2027, para os clientes com o financeiro quitado. Conforme o contrato, as despesas com a escritura (impostos, taxas e emolumentos) são por conta de cada cliente."
+    "d": "A formalização das escrituras começa depois da entrega do empreendimento, com início previsto para o segundo semestre de 2027, para os clientes com o financeiro quitado. Antes de começar, cada cliente receberá a orientação sobre documentos e procedimentos. Nos termos do contrato de cada cliente, as despesas com a escritura (impostos, taxas e emolumentos) são por conta do cliente. As datas são previsões, e qualquer mudança será informada aqui."
    }
   ],
   "nota_lote": "O número do seu lote continua o mesmo. O que mudou foi a gleba: a planta de vendas tinha 57 glebas, e o registro oficial tem 34 glebas maiores. Por isso, a gleba do seu contrato pode ser diferente da gleba registrada.",
-  "certidao": "Cada cliente pode pedir ao Cartório de Registro de Imóveis de Poções a certidão de inteiro teor da matrícula da gleba onde está o seu terreno.",
+  "certidao": "Cada cliente pode pedir ao Cartório de Registro de Imóveis de Poções a certidão de inteiro teor da matrícula da gleba onde está o seu terreno. A consulta é ilustrativa: a gleba e a matrícula de cada lote serão confirmadas na escritura.",
   "gleba_01": "Área da entrada, com o clube e o lago. Não tem lotes.",
   "gleba_34": "Reserva legal. Não tem lotes."
  }

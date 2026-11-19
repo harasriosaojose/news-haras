@@ -157,7 +157,7 @@
     });
     var ordem = ["salao_09.jpg", "guarita_11.jpg", "agua_27.jpg", "qui01_09.jpg", "salao_11.jpg", "ban01_09.jpg", "guarita_21.jpg", "salao_14.jpg", "agua_23.jpg", "qui02_11.jpg", "pedr_depois_1.jpg"];
     return '<section class="fundo-verde" id="videos"><div class="miolo bloco"><div class="cab"><div class="fio-ouro"></div><h2>Vídeos e fotos</h2><p>O Haras visto de cima e de perto. Os vídeos não têm som.</p></div>' +
-      '<p class="rot2">O Haras em vídeo</p><div class="trilho">' + D.videos.destaques.map(function (v) { return cartaoVideo(v, true); }).join("") + "</div>" +
+      '<p class="rot2">Vídeos de divulgação do Haras (Instagram)</p><div class="trilho">' + D.videos.destaques.map(function (v) { return cartaoVideo(v, true); }).join("") + "</div>" +
       '<p class="rot2">Conhecendo as ruas do Haras</p><div class="trilho">' + D.videos.ruas.map(function (v) { return cartaoVideo(v); }).join("") + "</div>" +
       '<p class="rot2">Fotos recentes das obras</p><div class="fotos">' + ordem.filter(function (n) { return fotos[n]; }).map(function (n) {
         return '<button data-foto="' + n + '" data-leg="' + esc(fotos[n]) + '"><img loading="lazy" src="' + F + n + '" alt="' + esc(fotos[n]) + '"></button>';
@@ -233,7 +233,7 @@
   /* ---------- contato ---------- */
   function contato() {
     var a = D.app;
-    return '<section class="bloco miolo" id="contato"><div class="cab"><div class="fio-ouro"></div><h2>Sua dúvida, sua sugestão</h2><p>Escreva aqui. Sua mensagem fica registrada com o escritório, e a resposta chega em ' + esc(a.prazo_resposta) + ".</p></div>" +
+    return '<section class="bloco miolo" id="contato"><div class="cab"><div class="fio-ouro"></div><h2>Sua dúvida, sua sugestão</h2><p>Escreva aqui. Sua mensagem fica registrada, e nossa meta é responder em ' + esc(a.prazo_resposta) + ".</p></div>" +
       '<div class="contato-grade"><form class="form" id="form" novalidate>' +
       '<div class="tipo"><label><input type="radio" name="tipo" value="Dúvida" checked><span>' + IC.duvida + 'Dúvida</span></label><label><input type="radio" name="tipo" value="Sugestão"><span>' + IC.lamp + "Sugestão</span></label></div>" +
       '<label class="campo"><span>Seu nome</span><input name="nome" autocomplete="name" required></label>' +
@@ -243,9 +243,9 @@
       '<p class="erro" id="erro" hidden>Preencha todos os campos para enviar.</p>' +
       '<button class="botao verde" type="submit">' + IC.ok + "Enviar mensagem</button>" +
       '<div class="ok-envio" id="ok-envio" hidden></div>' +
-      '<p class="priv">Seus dados são usados somente para responder a você (Lei nº 13.709/2018). A mensagem é vista apenas pela equipe do escritório.</p></form>' +
+      '<p class="priv">Quem cuida dos seus dados é o Chacreamento Haras Rio São José Ltda. (CNPJ 37.404.884/0001-50). Usamos seu nome, unidade, telefone e mensagem só para responder a você e registrar o atendimento. As mensagens ficam guardadas em um formulário do Google, com acesso só da equipe de atendimento do empreendimento, e não aparecem para outros clientes. Para ver, corrigir ou apagar seus dados, fale com o escritório (' + esc(a.endereco) + ') ou pelo WhatsApp ' + esc(a.whatsapp_exibir) + '. Lei nº 13.709/2018.</p></form>' +
       '<div><div class="coord"><h3>Prefere falar direto?</h3><p>Converse com o coordenador pelo WhatsApp ' + esc(a.whatsapp_exibir) + '.</p><a class="botao zap" target="_blank" rel="noopener" href="' + zap("Olá! Estou acompanhando as obras pelo News Haras e quero falar com o coordenador.") + '">' + IC.zap + "Falar com o coordenador</a></div>" +
-      '<div class="escr"><h3>Quero falar direto com o escritório de Poções</h3><p>' + esc(a.endereco) + ".</p>" +
+      '<div class="escr"><h3>Quero falar direto com o escritório de Poções</h3><p>' + esc(a.endereco) + (a.whatsapp_escritorio_exibir ? ". WhatsApp " + esc(a.whatsapp_escritorio_exibir) : "") + ".</p>" +
       (a.whatsapp_escritorio ? '<a class="botao zap" target="_blank" rel="noopener" href="https://wa.me/' + esc(a.whatsapp_escritorio) + "?text=" + encodeURIComponent("Olá! Vi o News Haras e quero falar com o escritório de Poções.") + '">' + IC.zap + "WhatsApp do escritório</a>" : "") + "</div>" +
       '<div class="links"><a class="botao linha" target="_blank" rel="noopener" href="' + esc(a.link_mapa) + '">' + IC.mapa + "Abrir o mapa de unidades</a></div></div></div></section>";
   }
@@ -297,7 +297,7 @@
     var txt = "*" + f.tipo.value + " pelo News Haras*\nNome: " + v.nome + "\nUnidade: " + v.unidade + "\nTelefone: " + v.telefone + "\n\n" + v.mensagem;
     bt.disabled = true; bt.textContent = "Enviando...";
     fetch(g.url, { method: "POST", mode: "no-cors", body: corpo }).then(function () {
-      ok.innerHTML = "<b>Recebemos sua mensagem!</b> Ela ficou registrada, e o escritório responde em " + esc(D.app.prazo_resposta) + ', pelo telefone que você informou.<a class="botao zap" target="_blank" rel="noopener" href="' + zap(txt) + '">' + IC.zap + "Enviar também pelo WhatsApp</a>";
+      ok.innerHTML = "<b>Recebemos sua mensagem!</b> Ela ficou registrada, e nossa meta é responder em " + esc(D.app.prazo_resposta) + ', pelo telefone que você informou.<a class="botao zap" target="_blank" rel="noopener" href="' + zap(txt) + '">' + IC.zap + "Enviar também pelo WhatsApp</a>";
       ok.hidden = false; f.mensagem.value = ""; bt.disabled = false; bt.innerHTML = IC.ok + "Enviar outra mensagem";
     }).catch(function () {
       ok.innerHTML = "<b>Não conseguimos registrar agora.</b> Envie pelo WhatsApp, que chega do mesmo jeito." + '<a class="botao zap" target="_blank" rel="noopener" href="' + zap(txt) + '">' + IC.zap + "Enviar pelo WhatsApp</a>";

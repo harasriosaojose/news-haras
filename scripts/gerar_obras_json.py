@@ -23,7 +23,7 @@ app = {
     "edicao": "Edição nº 1 · Novembro de 2026",
     "saudacao": "Seja bem-vindo ao News Haras",
     "exclusivo": "Exclusivo para você, cliente do Haras",
-    "frase": "O relatório completo do Haras Rio São José, feito para você: cada obra, a energia, a água, fotos de antes e depois e vídeos.",
+    "frase": "O acompanhamento das obras do Haras Rio São José, feito para você: cada obra, a energia, a água, fotos de antes e depois e vídeos.",
     "rotulo_geral": "Andamento geral das obras",
     "referencia": "31/10/2026",
     "atualizado_em": "19/11/2026",
@@ -31,13 +31,14 @@ app = {
     "geral_anterior_pct": 47.3,
     "geral_anterior_ref": "setembro",
     "ressalva": "As datas são previsões, que podem mudar com o clima, o ritmo da execução e a entrega dos fornecedores.",
-    "fonte": "Percentuais e fotos: relatórios do engenheiro responsável pela fiscalização das obras. Data e local impressos em cada foto.",
+    "fonte": "Percentuais e fotos: relatórios do engenheiro responsável pela fiscalização das obras. Data e local impressos na maior parte das fotos.",
     "whatsapp": "5511991468192",
     "whatsapp_exibir": "(11) 99146-8192",
-    "whatsapp_escritorio": "",  # número do WhatsApp do escritório de Poções (só dígitos, com 55); vazio = botão oculto
+    "whatsapp_escritorio": "5577981272671",
+    "whatsapp_escritorio_exibir": "(77) 98127-2671",  # número do WhatsApp do escritório de Poções (só dígitos, com 55); vazio = botão oculto
     "endereco": "Rua Cardeal Silva, nº 58, Centro, Poções, Bahia",
     "mensal": "O News Haras é atualizado todos os meses. Acompanhe as obras direto por aqui.",
-    "prazo_resposta": "até 2 dias úteis",
+    "prazo_resposta": "até 2 dias úteis",  # apresentado como meta, não como garantia
     "link_mapa": "https://harasriosaojose.github.io/haras-rio-sao-jose-mapa/",
     "link_agua": "https://tinyurl.com/redeaguahrsj",
     "forms": {
@@ -46,12 +47,12 @@ app = {
         "telefone": "entry.1310959149", "mensagem": "entry.631070095",
     },
     "nesta_edicao": [
-        {"t": "Energia: faltam duas etapas, e as duas cabem à Coelba", "ir": "#energia"},
+        {"t": "Energia: faltam duas etapas, e as duas dependem da Coelba", "ir": "#energia"},
         {"t": "Rede de água: a parte do empreendimento está 100% concluída", "ir": "#agua"},
         {"t": "Clube-salão chega a 75,6%, com antes e depois", "ir": "#obras"},
         {"t": "Quadra de areia: as obras começaram", "ir": "#obra=quadra"},
-        {"t": "Documentação legal: 34 glebas registradas, CCIR e ITR em dia", "ir": "#legal"},
-        {"t": "Mais de 200 fotos do engenheiro e 17 vídeos", "ir": "#videos"},
+        {"t": "Documentação legal: 34 glebas registradas, CCIR e ITR 2026 regularizados", "ir": "#legal"},
+        {"t": "200 fotos do engenheiro e 17 vídeos", "ir": "#videos"},
     ],
 }
 
@@ -65,10 +66,10 @@ eletrica = {
         "Ajustes a cargo do empreendimento concluídos, com a limpeza e a regularização de ruas",
         "Nova visita solicitada à Coelba",
     ],
-    "falta_titulo": "Faltam apenas duas etapas, e as duas cabem à Coelba",
+    "falta_titulo": "Faltam duas etapas, e as duas dependem da Coelba",
     "falta": [
-        {"n": "1", "t": "Vistoria final", "d": "É a etapa em que estamos. A Coelba valida os pontos já regularizados."},
-        {"n": "2", "t": "Energização da rede", "d": "É a ligação da energia, a última etapa."},
+        {"n": "1", "t": "Vistoria final", "d": "É a etapa em que estamos. A Coelba valida os pontos já regularizados. Se ela pedir algum novo ajuste, ele será feito e informado aqui."},
+        {"n": "2", "t": "Energização da rede", "d": "É quando a Coelba liga a energia na rede do Haras. Depois, a ligação de cada unidade segue as regras da Coelba."},
     ],
     "semana": "Toda semana o empreendimento pede um posicionamento à Coelba. A concessionária tem prazos próprios e não informa o dia da visita. Por isso, não há data para a ligação.",
     "protocolos": "Protocolos da obra na Coelba: Nota de Análise 9201518140 · Nota de Incorporação 9102424512",
@@ -79,15 +80,15 @@ agua = {
     "titulo": "Rede de água: a parte do empreendimento está 100% concluída",
     "lead": "A rede de água dos poços artesianos foi concluída em 30/10/2026.",
     "entregue": ["3 poços artesianos", "4 reservatórios, com 140 mil litros", "2 redes principais, uma em cada avenida", "Bombeamento com energia solar"],
-    "agora_titulo": "E o trabalho continua",
-    "agora": "A administração da rede e a ligação da água para os lotes também estão sendo feitas pelo empreendimento, em conjunto com a Associação.",
-    "botao": "Cadastro para a ligação da água",
+    "agora_titulo": "Agora, a etapa das ligações",
+    "agora": "O empreendimento segue trabalhando: por 3 meses, ele e a Associação cuidam juntos da administração da rede e da ligação da água aos lotes, tempo para a Associação se organizar. Depois, a administração segue com a Associação. A ligação dentro do lote (kit, escavação, mangueira interna e reservatório) é feita pelo proprietário, com a orientação da equipe. A água da rede é para uso doméstico.",
+    "botao": "Clique aqui e solicite a ligação do ponto de água do seu lote",
 }
 
 obras = [
     {"id": "rede-eletrica", "nome": "Rede elétrica", "curto": "Rede elétrica", "pct": None, "situacao": "coelba",
      "previsao": None, "capa": "eletrica_1.jpg",
-     "resumo": "A rede está instalada em todas as ruas. Faltam a vistoria final e a energização, que cabem à Coelba.",
+     "resumo": "A rede está instalada em todas as ruas. Faltam a vistoria final e a energização, que dependem da Coelba.",
      "feito": eletrica["feito"],
      "falta": ["Vistoria final da Coelba (etapa atual)", "Energização da rede (ligação)"],
      "nota": eletrica["semana"],
@@ -102,7 +103,7 @@ obras = [
      "previsao": "até o fim de dezembro de 2026", "capa": "salao_09.jpg",
      "resumo": "O espaço para reunir a família e os amigos já tem piso, pintura, janelas e portas.",
      "feito": ["Piso cerâmico em todos os ambientes", "Pintura interna e externa", "Instalações elétricas e de água", "Janelas de vidro, portas e varanda"],
-     "falta": ["Parte do esgotamento sanitário, que está em execução", "Divisórias e pias dos banheiros", "Mobiliário e equipamentos"],
+     "falta": ["Parte do esgotamento sanitário, que está em execução", "Divisórias dos banheiros com chuveiro", "Pias dos banheiros"],
      "blocos": [
          {"titulo": "Área externa e salão", "modo": "deslizar", "itens": [
              P("Fachada principal", "salao_01", J, "salao_09", O),
@@ -172,7 +173,7 @@ obras = [
      "blocos": [{"titulo": "Durante a obra e concluída", "modo": "lado", "itens": [
          P("Das valas ao ponto de água junto à via", "agua_01", O, "agua_23", O, "DURANTE", "CONCLUÍDA"),
          P("Reservatório em operação", "agua_04", O, "agua_27", O, "DURANTE", "CONCLUÍDA"),
-         P("Registros e ramais de distribuição", "agua_03", O, "agua_33", O, "DURANTE", "CONCLUÍDA")]}]},
+         P("Registros da rede de distribuição", "agua_03", O, "agua_33", O, "DURANTE", "CONCLUÍDA")]}]},
     {"id": "guarita", "nome": "Guarita", "curto": "Guarita", "pct": 100, "situacao": "concluida",
      "previsao": "Concluída", "capa": "guarita_11.jpg",
      "resumo": "A guarita foi revitalizada, com nova identificação, calçadas e jardim.",
@@ -226,10 +227,10 @@ legal = {
         {"t": "Registro no Cartório de Imóveis de Poções", "d": "A matrícula principal do empreendimento (nº 14.294) foi desmembrada em 34 glebas, cada uma com a sua matrícula, de nº 15.195 a 15.228. Todos os 654 lotes estão dentro dessas matrículas."},
         {"t": "CCIR e ITR regularizados", "d": "Em novembro de 2026, o cadastro das 34 glebas no INCRA (CCIR, exercício de 2026) e a declaração do ITR na Receita Federal (exercício de 2026) foram regularizados em nome da empresa."},
         {"t": "Kit da documentação no escritório", "d": "A certidão de inteiro teor da matrícula principal e os CCIR e ITR de todas as glebas ficam à disposição para consulta no escritório: Rua Cardeal Silva, nº 58, Centro, Poções."},
-        {"t": "Próxima etapa: as escrituras", "d": "A formalização das escrituras terá início a partir da entrega do empreendimento, prevista para o segundo semestre de 2027, para os clientes com o financeiro quitado. Conforme o contrato, as despesas com a escritura (impostos, taxas e emolumentos) são por conta de cada cliente."},
+        {"t": "Próxima etapa: as escrituras", "d": "A formalização das escrituras começa depois da entrega do empreendimento, com início previsto para o segundo semestre de 2027, para os clientes com o financeiro quitado. Antes de começar, cada cliente receberá a orientação sobre documentos e procedimentos. Nos termos do contrato de cada cliente, as despesas com a escritura (impostos, taxas e emolumentos) são por conta do cliente. As datas são previsões, e qualquer mudança será informada aqui."},
     ],
     "nota_lote": "O número do seu lote continua o mesmo. O que mudou foi a gleba: a planta de vendas tinha 57 glebas, e o registro oficial tem 34 glebas maiores. Por isso, a gleba do seu contrato pode ser diferente da gleba registrada.",
-    "certidao": "Cada cliente pode pedir ao Cartório de Registro de Imóveis de Poções a certidão de inteiro teor da matrícula da gleba onde está o seu terreno.",
+    "certidao": "Cada cliente pode pedir ao Cartório de Registro de Imóveis de Poções a certidão de inteiro teor da matrícula da gleba onde está o seu terreno. A consulta é ilustrativa: a gleba e a matrícula de cada lote serão confirmadas na escritura.",
     "gleba_01": "Área da entrada, com o clube e o lago. Não tem lotes.",
     "gleba_34": "Reserva legal. Não tem lotes.",
 }
@@ -237,13 +238,13 @@ legal = {
 videos = {
     "destaques": [
         {"id": "por-do-sol", "titulo": "E se este pôr do sol fosse seu?", "dur": "1 min"},
-        {"id": "tamanho", "titulo": "Olha o tamanho desse lugar", "dur": "30 s"},
-        {"id": "agua", "titulo": "A água chegou", "dur": "26 s"},
-        {"id": "relogio", "titulo": "Aqui o relógio anda mais devagar", "dur": "27 s"},
+        {"id": "tamanho", "titulo": "Olha o tamanho desse lugar", "dur": "26 s"},
+        {"id": "agua", "titulo": "A água chegou", "dur": "22 s"},
+        {"id": "relogio", "titulo": "Aqui o relógio anda mais devagar", "dur": "23 s"},
         {"id": "onde-fica", "titulo": "Onde fica o Haras", "dur": "15 s"},
     ],
-    "ruas": [{"id": "rua-%s" % n, "titulo": "Rua %s" % n, "dur": "28 s"} for n in ("01", "02", "03", "05", "06", "07", "08", "09", "10", "11", "12")]
-            + [{"id": "avenida-umbuzeiro", "titulo": "Avenida Umbuzeiro", "dur": "28 s"}],
+    "ruas": [{"id": "rua-%s" % n, "titulo": "Rua %s" % n, "dur": "24 s"} for n in ("01", "02", "03", "05", "06", "07", "08", "09", "10", "11", "12")]
+            + [{"id": "avenida-umbuzeiro", "titulo": "Avenida Umbuzeiro", "dur": "24 s"}],
 }
 
 # galeria completa dos relatórios do engenheiro, por obra
