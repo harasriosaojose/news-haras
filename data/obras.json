@@ -3,8 +3,9 @@
   "nome": "News Haras",
   "subtitulo": "Acompanhamento das obras",
   "edicao": "Edição nº 1 · Novembro de 2026",
-  "saudacao": "Que bom ter você aqui.",
-  "frase": "A revista eletrônica do Haras Rio São José. Aqui você acompanha cada obra, com fotos de antes e depois e vídeos.",
+  "saudacao": "Seja bem-vindo ao News Haras",
+  "exclusivo": "Exclusivo para você, cliente do Haras",
+  "frase": "O relatório completo do Haras Rio São José, feito para você: cada obra, a energia, a água, fotos de antes e depois e vídeos.",
   "rotulo_geral": "Andamento geral das obras",
   "referencia": "31/10/2026",
   "atualizado_em": "19/11/2026",
@@ -38,6 +39,10 @@
    {
     "t": "Clube-salão chega a 75,6%, com antes e depois",
     "ir": "#obras"
+   },
+   {
+    "t": "Quadra de areia: as obras começaram",
+    "ir": "#obra=quadra"
    },
    {
     "t": "Mais de 200 fotos do engenheiro e 17 vídeos",
@@ -86,6 +91,59 @@
   "botao": "Cadastro para a ligação da água"
  },
  "obras": [
+  {
+   "id": "rede-eletrica",
+   "nome": "Rede elétrica",
+   "curto": "Rede elétrica",
+   "pct": null,
+   "situacao": "coelba",
+   "previsao": null,
+   "capa": "eletrica_1.jpg",
+   "resumo": "A rede está instalada em todas as ruas. Faltam a vistoria final e a energização, que cabem à Coelba.",
+   "feito": [
+    "Rede instalada: 215 postes e 13 transformadores",
+    "Vistoria da Coelba realizada: a rede de alta e de baixa tensão foi aprovada, com pedido de ajustes pontuais",
+    "Ajustes a cargo do empreendimento concluídos, com a limpeza e a regularização de ruas",
+    "Nova visita solicitada à Coelba"
+   ],
+   "falta": [
+    "Vistoria final da Coelba (etapa atual)",
+    "Energização da rede (ligação)"
+   ],
+   "nota": "Toda semana o empreendimento pede um posicionamento à Coelba. A concessionária tem prazos próprios e não informa o dia da visita. Por isso, não há data para a ligação.",
+   "blocos": [
+    {
+     "titulo": "A rede vista de cima",
+     "modo": "grade",
+     "itens": [
+      {
+       "foto": "eletrica_1.jpg",
+       "leg": "Postes e cabos na Rua 02"
+      },
+      {
+       "foto": "eletrica_4.jpg",
+       "leg": "Transformador na Rua 07"
+      },
+      {
+       "foto": "eletrica_2.jpg",
+       "leg": "Rede ao longo da Rua 12"
+      },
+      {
+       "foto": "eletrica_3.jpg",
+       "leg": "Postes e cabos na Rua 12"
+      },
+      {
+       "foto": "eletrica_5.jpg",
+       "leg": "Rede na Rua 06"
+      },
+      {
+       "foto": "eletrica_6.jpg",
+       "leg": "Rede vista do alto, Rua 12"
+      }
+     ]
+    }
+   ]
+  },
   {
    "id": "clube-salao",
    "nome": "Clube-salão de festas",
@@ -571,14 +629,27 @@
    "pct": 8.8,
    "situacao": "execucao",
    "previsao": "até o fim de março de 2027",
-   "capa": null,
-   "resumo": "Os serviços iniciais estão em andamento.",
+   "capa": "quadra_inicio.jpg",
+   "resumo": "As obras da quadra começaram: a máquina já trabalha no movimento de terra, ao lado do clube-salão.",
    "feito": [
-    "Serviços preliminares e movimento de terra iniciados"
+    "Serviços preliminares",
+    "Movimento de terra em andamento"
    ],
    "falta": [
     "Base e areia",
     "Alambrado, portões e iluminação"
+   ],
+   "blocos": [
+    {
+     "titulo": "Início das obras",
+     "modo": "grade1",
+     "itens": [
+      {
+       "foto": "quadra_inicio.jpg",
+       "leg": "Movimento de terra da quadra, 19/11/2026"
+      }
+     ]
+    }
    ]
   },
   {

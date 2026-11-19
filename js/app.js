@@ -5,7 +5,7 @@
   var modal = document.getElementById("modal");
   var D = null, atual = 0;
   var F = "assets/fotos/", V = "assets/videos/";
-  var ROTULO = { concluida: "Concluída", execucao: "Em andamento", iniciar: "A iniciar" };
+  var ROTULO = { concluida: "Concluída", execucao: "Em andamento", iniciar: "A iniciar", coelba: "Aguardando a Coelba" };
   function svg(d) { return '<svg class="i" viewBox="0 0 24 24" aria-hidden="true">' + d + "</svg>"; }
   var IC = {
     ok: svg('<path d="M5 12.5l4.5 4.5L19 7.5"/>'),
@@ -39,11 +39,11 @@
   /* ---------- capa ---------- */
   function capa() {
     var a = D.app, n = { concluida: 0, execucao: 0, iniciar: 0 };
-    D.obras.forEach(function (o) { n[o.situacao]++; });
+    D.obras.forEach(function (o) { if (n[o.situacao] != null) n[o.situacao]++; });
     var r = 46, comp = 2 * Math.PI * r;
     return '<header class="capa" id="inicio"><div class="foto" role="img" aria-label="A entrada do Haras Rio São José hoje" style="background-image:url(assets/capa.jpg)"></div>' +
       '<div class="topo"><img src="assets/logo.png" alt="" width="52" height="52"><span><b>' + esc(a.nome) + "</b><small>" + esc(a.subtitulo) + '</small></span><em class="edicao">' + esc(a.edicao) + "</em></div>" +
-      '<div class="dentro"><span class="etiqueta">Revista eletrônica do Haras Rio São José</span><h1>' + esc(a.saudacao) + '</h1><p class="frase">' + esc(a.frase) + "</p>" +
+      '<div class="dentro"><span class="etiqueta">' + esc(a.exclusivo) + '</span><h1>' + esc(a.saudacao) + '</h1><p class="frase">' + esc(a.frase) + "</p>" +
       '<div class="geral"><div class="anel"><svg viewBox="0 0 112 112"><circle class="fundo" cx="56" cy="56" r="' + r + '"/><circle class="frente" cx="56" cy="56" r="' + r +
       '" stroke-dasharray="' + comp.toFixed(1) + '" stroke-dashoffset="' + comp.toFixed(1) + '" data-fim="' + (comp * (1 - a.geral_pct / 100)).toFixed(1) + '"/></svg><b>' + pct(a.geral_pct) + "</b></div>" +
       '<div><div class="rot">' + esc(a.rotulo_geral) + '</div><div class="txt">Posição em ' + esc(a.referencia) + ". Em " + esc(a.geral_anterior_ref) + ", era <b>" + pct(a.geral_anterior_pct) + "</b>.</div>" +
@@ -62,7 +62,7 @@
       '<div class="duas-etapas"><h4>' + esc(e.falta_titulo) + "</h4>" + e.falta.map(function (f, i) {
         return '<div class="etapa' + (i === 0 ? " atual" : "") + '"><div class="n">' + esc(f.n) + "</div><div><b>" + esc(f.t) + "</b>" + (i === 0 ? "<em>estamos aqui</em>" : "") + "<span>" + esc(f.d) + "</span></div></div>";
       }).join("") + "</div>" +
-      '<div class="semana">' + IC.sino + "<span>" + esc(e.semana) + '</span></div><p class="proto">' + esc(e.protocolos) + "</p></article>";
+      '<div class="semana">' + IC.sino + "<span>" + esc(e.semana) + '</span></div><p class="proto">' + esc(e.protocolos) + '</p><button class="botao ouro" data-ir="rede-eletrica">Ver as fotos da rede elétrica</button></article>';
     h += '<article class="destaque agua" id="agua"><span class="sel">' + IC.gota + esc(g.selo) + "</span><h3>" + esc(g.titulo) + '</h3><div class="cem"><b>100%</b><span>' + esc(g.lead) + "</span></div>" +
       '<div class="chips">' + g.entregue.map(function (t) { return "<span>" + esc(t) + "</span>"; }).join("") + "</div>" +
       '<div class="agora"><b>' + esc(g.agora_titulo) + "</b><p>" + esc(g.agora) + "</p></div>" +
@@ -73,7 +73,7 @@
 
   /* ---------- obras em abas ---------- */
   function aba(o, i) {
-    var mini = o.situacao === "concluida" ? '<span class="mini">' + IC.ok + "</span>" : '<span class="mini" style="--v:' + o.pct + '"><span>' + Math.round(o.pct) + "</span></span>";
+    var mini = o.situacao === "coelba" ? '<span class="mini raio">' + IC.raio + "</span>" : o.situacao === "concluida" ? '<span class="mini">' + IC.ok + "</span>" : '<span class="mini" style="--v:' + o.pct + '"><span>' + Math.round(o.pct) + "</span></span>";
     return '<button class="aba ' + o.situacao + '" role="tab" id="aba-' + o.id + '" aria-selected="' + (i === atual) + '" data-i="' + i + '">' + mini + esc(o.curto || o.nome) + "</button>";
   }
   function rotulos(p) {
@@ -97,7 +97,7 @@
     var h = '<div class="sub-bloco"><h4>' + esc(b.titulo) + "</h4>";
     if (b.modo === "deslizar") h += '<p class="dica">Arraste o botão para os lados e compare o mesmo lugar.</p>' + b.itens.map(par).join("");
     else if (b.modo === "lado") h += '<p class="dica">Toque na foto para ampliar.</p>' + b.itens.map(lado).join("");
-    else h += '<div class="grade' + (retrato ? " retrato" : "") + '">' + b.itens.map(function (f) {
+    else h += '<div class="grade' + (retrato ? " retrato" : "") + (b.modo === "grade1" ? " uma" : "") + '">' + b.itens.map(function (f) {
       return '<figure><button data-foto="' + f.foto + '" data-leg="' + esc(f.leg) + '"><img loading="lazy" src="' + F + f.foto + '" alt="' + esc(f.leg) + '"></button><figcaption>' + esc(f.leg) + "</figcaption></figure>";
     }).join("") + "</div>";
     return h + "</div>";
@@ -107,9 +107,10 @@
     var h = o.capa ? '<div class="heroi" style="background-image:url(' + F + o.capa + ')"></div>'
       : '<div class="heroi vazio"><div>' + IC.obra + (o.situacao === "iniciar" ? "As fotos chegam quando a obra começar." : "As primeiras fotos chegam na próxima atualização.") + "</div></div>";
     h += '<div class="ficha">' + selo(o.situacao) + "<h3>" + esc(o.nome) + "</h3>" + (o.resumo ? '<p class="resumo">' + esc(o.resumo) + "</p>" : "");
-    if (o.situacao !== "iniciar") h += '<div class="pctg"><b>' + pct(o.pct) + "</b><span>executado em " + esc(D.app.referencia) + "</span></div>" + barra(o.pct, o.situacao === "concluida");
+    if (o.pct != null && o.situacao !== "iniciar") h += '<div class="pctg"><b>' + pct(o.pct) + "</b><span>executado em " + esc(D.app.referencia) + "</span></div>" + barra(o.pct, o.situacao === "concluida");
     if (o.previsao) h += '<div class="previsao">' + IC.cal + "<div><b>" + esc(previsaoTxt(o)) + "</b>" + (o.situacao === "concluida" ? "" : "<small>" + esc(D.app.ressalva) + "</small>") + "</div></div>";
     h += "</div>";
+    if (o.nota) h += '<p class="nota">' + esc(o.nota) + "</p>";
     if (o.feito || o.falta) {
       h += '<div class="duas">';
       if (o.feito) h += '<div class="caixa feito"><h4>O que já foi feito</h4><ul>' + o.feito.map(function (t) { return "<li>" + IC.ok + "<span>" + esc(t) + "</span></li>"; }).join("") + "</ul></div>";
@@ -235,6 +236,10 @@
     });
   });
 
+  window.addEventListener("hashchange", function () {
+    var m = location.hash.match(/^#obra=([\w-]+)/);
+    if (m && D) mostrar(D.obras.findIndex(function (o) { return o.id === m[1]; }), true);
+  });
   function navAtiva() {
     var links = document.querySelectorAll(".barra-nav a");
     var obs = new IntersectionObserver(function (es) {
@@ -249,7 +254,7 @@
     document.getElementById("rodape-fonte").textContent = d.app.fonte;
     document.getElementById("rodape-ressalva").textContent = d.app.ressalva;
     document.title = d.app.nome + " · " + d.app.subtitulo + " · Haras Rio São José";
-    var m = location.hash.match(/^#obra=([\w-]+)/), i = m ? d.obras.findIndex(function (o) { return o.id === m[1]; }) : 0;
+    var m = location.hash.match(/^#obra=([\w-]+)/), i = m ? d.obras.findIndex(function (o) { return o.id === m[1]; }) : d.obras.findIndex(function (o) { return o.id === "clube-salao"; });
     mostrar(i < 0 ? 0 : i, !!m);
     navAtiva(); animar();
   }).catch(function () {

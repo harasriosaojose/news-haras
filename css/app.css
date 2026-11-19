@@ -265,3 +265,39 @@ section.bloco { padding-top: 34px; }
 .modal .seta.e { left: 8px; } .modal .seta.d { right: 8px; }
 .ok-envio .botao { margin-top: 12px; }
 @media (min-width: 700px) { .mosaico { grid-template-columns: repeat(6, 1fr); } .nesta { display: grid; grid-template-columns: 1fr 1fr; column-gap: 20px; } .nesta p { grid-column: 1 / -1; } }
+
+/* ---------- rede elétrica, quadra e ajustes de leitura ---------- */
+.selo.coelba { background: var(--verde); color: var(--dourado-claro); }
+.aba .mini.raio { background: var(--dourado); color: var(--verde); }
+.aba .mini.raio::before { display: none; }
+.aba .mini.raio svg { width: 16px; height: 16px; position: relative; stroke-width: 2.4; }
+.grade.uma { grid-template-columns: 1fr; }
+.grade.uma button { aspect-ratio: 16 / 9; }
+.destaque.energia .botao { margin-top: 16px; }
+.capa h1 { font-size: clamp(30px, 8.4vw, 44px); }
+.capa .etiqueta { font-size: 12.5px; padding: 9px 13px; box-shadow: 0 4px 14px rgba(0, 0, 0, .3); }
+@media (min-width: 900px) {
+  .capa { display: grid; grid-template-columns: 1.05fr 1fr; align-items: stretch; min-height: 620px; }
+  .capa .foto { aspect-ratio: auto; max-height: none; height: 100%; }
+  .capa .foto::after { background: linear-gradient(90deg, rgba(10, 26, 18, .25) 0%, rgba(10, 26, 18, 0) 60%, var(--verde-3) 100%), linear-gradient(180deg, rgba(10, 26, 18, .55), rgba(10, 26, 18, 0) 30%); }
+  .capa .dentro { margin: 0; padding: 96px 40px 40px 24px; align-self: center; max-width: 620px; }
+  .capa h1 { font-size: 46px; }
+  .miolo, .rodape { max-width: 1040px; }
+  .heroi { aspect-ratio: 21 / 9; }
+  .ficha { max-width: 560px; }
+  .sub-bloco .par { display: inline-block; width: calc(50% - 8px); vertical-align: top; }
+  .sub-bloco .par:nth-of-type(odd) { margin-right: 12px; }
+  .grade { grid-template-columns: repeat(3, 1fr); }
+  .grade.uma { grid-template-columns: minmax(0, 720px); }
+  .mosaico { grid-template-columns: repeat(8, 1fr); }
+  .barra-nav { top: 0; bottom: auto; left: auto; right: 24px; height: 58px; max-width: none; width: 440px; margin: 0; border-radius: 0 0 18px 18px; }
+  .barra-nav a { flex-direction: row; gap: 7px; font-size: 13px; }
+  body { padding-bottom: 0; }
+  html { scroll-padding-top: 70px; }
+  .abas { top: 58px; flex-wrap: wrap; overflow: visible; margin: 16px 0 0; padding: 8px 0 12px; }
+}
+@media (min-width: 900px) {
+  .capa .topo .edicao { margin-left: 18px; max-width: none; align-self: center; }
+  .barra-nav { width: 470px; }
+  .barra-nav a { white-space: nowrap; }
+}

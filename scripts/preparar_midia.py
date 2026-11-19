@@ -51,6 +51,22 @@ if not os.path.exists(capa):
     Image.open(tmp).convert("RGB").save(capa, quality=84, optimize=True, progressive=True)
     os.remove(tmp)
 
+# rede elétrica: quadros de drone com postes, cabos e transformador (out/2026)
+ELETRICA = [("Rua 02.MP4", 44), ("rua 12 dois mais baixo.MP4", 46), ("rua 12 dois mais baixo.MP4", 53), ("Rua 07(1).MP4", 28), ("Rua 06.MP4", 35), ("rua 12 retorno.MP4", 38)]
+for k, (arq, t) in enumerate(ELETRICA, 1):
+    dst = os.path.join(FOTOS, "eletrica_%d.jpg" % k)
+    if not os.path.exists(dst):
+        tmp = dst + ".png"
+        subprocess.run([FF, "-y", "-v", "error", "-ss", str(t), "-i", BR + "\\" + arq, "-frames:v", "1", "-vf", "scale=1280:-2,eq=saturation=1.15:contrast=1.04", tmp], check=True)
+        Image.open(tmp).convert("RGB").save(dst, quality=80, optimize=True, progressive=True)
+        os.remove(tmp)
+
+# quadra: foto da câmera do início das obras (19/11/2026), enviada pelo Jachson
+QUADRA = os.path.join(RAIZ, "fontes", "quadra-inicio-2026-11-19.webp")
+if os.path.exists(QUADRA) and not os.path.exists(os.path.join(FOTOS, "quadra_inicio.jpg")):
+    im = Image.open(QUADRA).convert("RGB")
+    im.crop((4, 0, im.width - 8, im.height - 40)).save(os.path.join(FOTOS, "quadra_inicio.jpg"), quality=84, optimize=True, progressive=True)
+
 # vídeos (id, origem)
 VIDEOS = [
     ("por-do-sol", IG + r"\Impulsionar 04-11-2026\Video - E se este por do sol fosse seu.mp4"),
