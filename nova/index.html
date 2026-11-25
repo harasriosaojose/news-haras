@@ -4,6 +4,25 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>News Haras · Novembro de 2026</title>
+<!-- Microsoft Clarity, projeto "Haras Rio São José" (conta do Haras): tempo na página, rolagem, cliques e gravação das visitas -->
+<script type="text/javascript">
+(function(c,l,a,r,i,t,y){
+c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+})(window, document, "clarity", "script", "zj8l7r9wgh");
+clarity("set", "edicao", "novembro-2026");
+// cada vídeo que a pessoa dá play vira um evento no Clarity (video_nome-do-arquivo), uma vez por vídeo em cada visita;
+// o vídeo que toca sozinho no fundo (autoplay) não conta
+var haras_vistos = {};
+document.addEventListener("play", function (e) {
+  var v = e.target; if (!v || v.tagName !== "VIDEO" || v.autoplay) return;
+  var nome = (v.currentSrc || v.src || "").split("/").pop().split("?")[0].replace(/\.\w+$/, "") || "sem_nome";
+  if (haras_vistos[nome]) return;
+  haras_vistos[nome] = 1;
+  clarity("event", "video_" + nome);
+}, true);
+</script>
 <meta name="description" content="Diário de obra do Chacreamento Haras Rio São José: o que já foi entregue, a energia, a água e cada obra, com fotos reais e a data de cada uma.">
 <meta name="theme-color" content="#1d3a18">
 <meta property="og:type" content="website">
