@@ -247,7 +247,7 @@
       '<div><div class="coord"><h3>Prefere falar direto?</h3><p>Converse com o coordenador pelo WhatsApp ' + esc(a.whatsapp_exibir) + '.</p><a class="botao zap" target="_blank" rel="noopener" href="' + zap("Olá! Estou acompanhando as obras pelo News Haras e quero falar com o coordenador.") + '">' + IC.zap + "Falar com o coordenador</a></div>" +
       '<div class="escr"><h3>Quero falar direto com o escritório de Poções</h3><p>' + esc(a.endereco) + (a.whatsapp_escritorio_exibir ? ". WhatsApp " + esc(a.whatsapp_escritorio_exibir) : "") + ".</p>" +
       (a.whatsapp_escritorio ? '<a class="botao zap" target="_blank" rel="noopener" href="https://wa.me/' + esc(a.whatsapp_escritorio) + "?text=" + encodeURIComponent("Olá! Vi o News Haras e quero falar com o escritório de Poções.") + '">' + IC.zap + "WhatsApp do escritório</a>" : "") + "</div>" +
-      '<div class="links"><a class="botao linha" target="_blank" rel="noopener" href="' + esc(a.link_mapa) + '">' + IC.mapa + "Abrir o mapa de unidades</a></div></div></div></section>";
+      '<div class="escr"><h3>Ainda não tem a sua unidade?</h3><p>Veja no mapa o que está disponível e escolha a sua.</p><a class="botao ouro" target="_blank" rel="noopener" href="' + esc(a.link_mapa) + '">' + IC.mapa + "Ver as unidades disponíveis</a></div></div></div></section>";
   }
 
   /* ---------- modal ---------- */
